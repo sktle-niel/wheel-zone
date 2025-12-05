@@ -1,3 +1,4 @@
+
 <nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px); transition: all 0.3s ease; border-bottom: none;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="../assets/branding/lucent.png" alt="Moto Brand Logo" height="90"></a>
@@ -23,7 +24,15 @@
         </div>
     </div>
     <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
         @media (max-width: 767px) {
+            .navbar-toggler {
+                animation: pulse 2s infinite;
+            }
             .navbar-collapse {
                 position: fixed;
                 top: 0;
@@ -79,6 +88,34 @@
         @media (min-width: 768px) {
             .btn-close {
                 display: none !important;
+            }
+            .container-fluid {
+                display: flex;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            .navbar-brand {
+                margin-right: 2rem;
+            }
+            .navbar-collapse {
+                flex: none;
+            }
+            .nav-link {
+                position: relative;
+                transition: all 0.3s ease;
+            }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 4px;
+                background-color: #ffffff;
+                transition: width 0.3s ease;
+            }
+            .nav-link:hover::after {
+                width: 100%;
             }
         }
     </style>
