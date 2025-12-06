@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h2 class="text-center mb-4" style="color: #F4DE2B;">About Two Wheel Zone</h2>
+                <h2 class="text-center mb-4" style="color: #41CE34; text-transform: uppercase;">About Two Wheels Zone</h2>
                 <p class="lead">Two Wheel Zone is your premier destination for all things related to motorcycle parts and services. We specialize in providing high-quality parts, expert maintenance, and comprehensive services for motorcycles.</p>
                 <p>Whether you're looking for upgrades, repairs, or routine check-ups, our team of experienced professionals is dedicated to keeping your two-wheeled adventures running smoothly. From FI cleaning to ECU remapping, we offer a wide range of services to meet all your motorcycle needs.</p>
 
@@ -17,25 +17,25 @@
                 <div class="row mt-4">
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
-                            <i class="bi bi-tools fs-2 text-warning mb-2"></i>
+                            <i class="bi bi-tools fs-2 text-success mb-2"></i>
                             <h6>Expert Mechanics</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
-                            <i class="bi bi-award fs-2 text-warning mb-2"></i>
+                            <i class="bi bi-award fs-2 text-success mb-2"></i>
                             <h6>Quality Parts</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
-                            <i class="bi bi-clock fs-2 text-warning mb-2"></i>
+                            <i class="bi bi-clock fs-2 text-success mb-2"></i>
                             <h6>Fast Service</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
-                            <i class="bi bi-shield-check fs-2 text-warning mb-2"></i>
+                            <i class="bi bi-shield-check fs-2 text-success mb-2"></i>
                             <h6>Guaranteed Work</h6>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
         <!-- Mission Statement -->
         <div class="row mt-5">
             <div class="col-12 text-center">
-                <h3 style="color: #F4DE2B;">Our Mission</h3>
+                <h3 style="color: #41CE34; text-transform: uppercase;">Our Mission</h3>
                 <p class="mt-3">To empower motorcycle enthusiasts by providing top-tier maintenance, customization, and repair services that ensure every ride is safe, exhilarating, and unforgettable. We believe in the freedom of the open road and are committed to keeping your motorcycle performing at its best.</p>
             </div>
         </div>
@@ -59,7 +59,7 @@
         }
         .feature-item {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 50, 0.8) 100%);
-            border: 1px solid rgba(244, 222, 43, 0.3);
+            border: 1px solid rgba(65, 206, 52, 0.3);
             border-radius: 10px;
             padding: 15px;
             transition: all 0.3s ease;
@@ -67,8 +67,8 @@
         }
         .feature-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(244, 222, 43, 0.4);
-            border-color: rgba(244, 222, 43, 0.6);
+            box-shadow: 0 8px 25px rgba(243, 22, 20, 0.4);
+            border-color: rgba(243, 22, 20, 0.6);
         }
         .feature-item:hover .bi {
             transform: scale(1.1);
@@ -81,7 +81,7 @@
         .workshop-image:hover {
             transform: scale(1.05) rotate(1deg);
             filter: brightness(1.1) contrast(1.05);
-            box-shadow: 0 15px 35px rgba(244, 222, 43, 0.3);
+            box-shadow: 0 15px 35px rgba(243, 22, 20, 0.3);
         }
         .carousel-container {
             position: relative;
