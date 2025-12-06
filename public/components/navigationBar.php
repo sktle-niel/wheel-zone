@@ -1,7 +1,7 @@
 
 <nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px); transition: all 0.3s ease; border-bottom: none;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="../assets/branding/logo.png" alt="Moto Brand Logo" height="90"></a>
+        <a class="navbar-brand" href="#"><img src="../assets/branding/lucent.png" alt="Moto Brand Logo" height="90"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

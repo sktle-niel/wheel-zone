@@ -6,7 +6,21 @@
     <title>Moto Page</title>
     <?php include '../config/config.php'; ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    body {
+        font-family: "Zen Dots", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 1px;
+    }
+
+</style>
+
 <body>
     <?php include 'components/navigationBar.php'; ?>
     <?php include 'components/carousel.php'; ?>

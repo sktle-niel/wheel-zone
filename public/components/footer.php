@@ -13,9 +13,43 @@
             </div>
             <div class="col-md-6 text-end">
                 <h5>Follow Us</h5>
-                <a href="https://www.facebook.com/twowheelzone" target="_blank" class="text-light me-3">
+                <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light me-3">
                     <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
                 </a>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="../assets/branding/lucent.png" alt="Two Wheels Zone Logo" class="me-3" style="height: 150px;">
+                    <p class="mb-0">Quality services at affordable prices.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Useful Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">About Us</a></li>
+                    <li><a href="#" class="text-light">Be A Partner</a></li>
+                    <li><a href="#" class="text-light">Franchise Us</a></li>
+                    <li><a href="#" class="text-light">Contact Us</a></li>
+                </ul>
+                <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <h6>Engage</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Terms of Service</a></li>
+                            <li><a href="#" class="text-light">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6>Support & Help</h6>
+                        <ul class="list-unstyled">
+                            <li>0966 061 9979 (Globe)</li>
+                            <li>0919 269 4103 (Smart)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <hr class="my-3">
@@ -23,4 +57,18 @@
             <p>&copy; 2023 Two Wheel Zone. All rights reserved.</p>
         </div>
     </div>
+    <style>
+        @media (max-width: 767px) {
+            .col-md-6 {
+                text-align: center !important;
+            }
+            .d-flex {
+                justify-content: center;
+            }
+            .me-3 {
+                margin-right: 1rem !important;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
 </footer>
