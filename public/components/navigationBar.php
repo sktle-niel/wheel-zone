@@ -1,12 +1,12 @@
 
 <nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px); transition: all 0.3s ease; border-bottom: none;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="../assets/branding/lucent.png" alt="Moto Brand Logo" height="90"></a>
+        <a class="navbar-brand" href="#"><img src="../assets/branding/logo.png" alt="Moto Brand Logo" height="90"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" style="outline: none !important; border: none !important;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Close"></button>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="#about-us">About Us</a>
@@ -32,6 +32,10 @@
         @media (max-width: 767px) {
             .navbar-toggler {
                 animation: pulse 2s infinite;
+                outline: none !important;
+            }
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23D9831F' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
             }
             .navbar-collapse {
                 position: fixed;
@@ -56,7 +60,7 @@
                 margin-left: 15px;
             }
             .nav-link {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                border-bottom: 1px solid #D9831F !important;
                 padding-bottom: 5px;
             }
         }
@@ -111,7 +115,7 @@
                 left: 0;
                 width: 0;
                 height: 4px;
-                background-color: #ffffff;
+                background-color: #D9831F;
                 transition: width 0.3s ease;
             }
             .nav-link:hover::after {

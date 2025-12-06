@@ -1,140 +1,159 @@
-<section class="services py-5" style="background: #fff">
+<section class="services py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Our Services</h2>
+        <h2 class="text-center mb-4" style="color: #F4DE2B;">Our Services</h2>
         <!-- Responsive Grid -->
         <div class="row">
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-wrench fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">FI Cleaning</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-gear fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">FI Diagnosing Tools</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-droplet fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Injector Testing</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-bullseye fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Rim Alignment</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-eye fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Eye Line</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-lightbulb fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Headlight Upgrade and Setup</h5>
                     </div>
                 </div>
             </div>
             <div class="col-12 text-center mt-4" id="show-more-container">
-                <span id="show-more-text" class="show-more-link">Show More</span>
+                <span id="show-more-text" class="show-more-link btn btn-outline-warning">Show More</span>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-lightning fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Mini Driving Lights</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-volume-up fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Loud Horn Upgrade</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-tools fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Vulcanizing</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-magnet fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Magneto Cleaning</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-cpu fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Stock ECU Remapping Honda & Yamaha</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-shield-check fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Preventive Maintenance</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-arrow-up-circle fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">CVT Upgrade</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-wrench fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">CVT Cleaning</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-gear fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">CVT Tuning</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-arrow-down-circle fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Front Shock Repack</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-plug fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Wiring</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-tools fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Overhauling</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <i class="bi bi-car-front fs-1 mb-2 text-warning"></i>
                         <h5 class="card-title">Upholstery Upgrade</h5>
                     </div>
                 </div>
@@ -142,31 +161,50 @@
         </div>
     </div>
     <style>
+        .services {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #fff;
+        }
         .card {
-            min-height: 120px;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            min-height: 140px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(244, 222, 43, 0.3);
+            border-radius: 15px;
             color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(244, 222, 43, 0.5), 0 0 20px rgba(244, 222, 43, 0.2);
+            border-color: rgba(244, 222, 43, 0.8);
+        }
+        .card:hover .bi {
+            transform: scale(1.1) rotate(5deg);
+            transition: transform 0.3s ease;
         }
         .hidden {
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         .service-card {
-            transition: opacity 0.5s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         .fading {
             opacity: 0 !important;
-            transform: scale(0.9);
-        }
-        .service-card {
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: scale(0.95);
         }
         .show-more-link {
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .show-more-link:hover {
+            background-color: #ffc107 !important;
+            border-color: #ffc107 !important;
+            color: #000 !important;
         }
         #show-more-container.expanded {
             position: relative;
@@ -189,7 +227,7 @@
                 display: none;
             }
             .card {
-                min-height: 100px;
+                min-height: 120px;
             }
             .card-title {
                 font-size: 1rem;
