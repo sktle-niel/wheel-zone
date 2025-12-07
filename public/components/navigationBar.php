@@ -18,7 +18,7 @@
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./contactUs.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="#located-branch">Located Branch</a>
+                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./branches.php">Located Branch</a>
                 </li>
             </ul>
         </div>
