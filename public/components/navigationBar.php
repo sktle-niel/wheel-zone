@@ -15,7 +15,7 @@
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./franchiseUs.php">Franchise Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="#contact-us">Contact Us</a>
+                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./contactUs.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="#located-branch">Located Branch</a>
