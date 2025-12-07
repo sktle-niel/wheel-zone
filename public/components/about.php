@@ -57,6 +57,9 @@
             background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: #fff;
         }
+        .about p, .about .lead {
+            text-align: justify;
+        }
         .feature-item {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 50, 0.8) 100%);
             border: 1px solid rgba(65, 206, 52, 0.3);
@@ -120,6 +123,19 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            .lead, p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+            h6 {
+                font-size: 0.85rem;
             }
         }
     </style>
