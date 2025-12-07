@@ -2,3 +2,5 @@
 - [x] Ensure existing links and content are preserved without changes
 - [x] Update responsive CSS to maintain layout on mobile
 - [x] Test the footer layout for responsiveness
+- [x] Create franchiseUs.php with parallax effect featuring "Get in Touch" text on image and contact form with name, mobile (+639 prefix), email, how did you find us, franchise location, and message fields
+- [x] Remove custom font styles from form controls in franchiseUs.php

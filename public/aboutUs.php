@@ -46,21 +46,23 @@
         .parallax-content {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 10%;
+            transform: translateY(-50%);
             color: white;
-            text-align: center;
+            text-align: left;
             z-index: 1;
         }
         .parallax-content h1 {
             font-size: 3rem;
             text-transform: uppercase;
             margin-bottom: 1rem;
+            border-bottom: 5px solid #41CE34;
         }
         .parallax-content p {
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            text-align: justify;
         }
         .about-content {
             padding: 4rem 0;
@@ -79,6 +81,11 @@
         @media (max-width: 768px) {
             .parallax {
                 height: 70vh;
+            }
+            .parallax-content {
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
             }
             .parallax-content h1 {
                 margin-top: 50px;

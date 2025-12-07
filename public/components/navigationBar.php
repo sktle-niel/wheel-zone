@@ -12,7 +12,7 @@
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="#franchise-us">Franchise Us</a>
+                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./franchiseUs.php">Franchise Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="#contact-us">Contact Us</a>
@@ -24,6 +24,9 @@
         </div>
     </div>
     <style>
+        .navbar-brand img {
+            height: 90px !important;
+        }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -73,9 +76,6 @@
             }
         }
         @media (max-width: 390px) {
-            .navbar-brand img {
-                height: 50px !important;
-            }
             .nav-link {
                 font-size: small !important;
             }
@@ -87,9 +87,6 @@
             }
         }
         @media (max-width: 360px) {
-            .navbar-brand img {
-                height: 45px !important;
-            }
             .nav-link {
                 font-size: x-small !important;
             }
