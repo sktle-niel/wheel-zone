@@ -24,6 +24,7 @@
 <body>
     <?php include 'components/navigationBar.php'; ?>
     <?php include 'components/carousel.php'; ?>
+    <?php include 'components/franchiseBtn.php'; ?>
     <?php include 'components/about.php'; ?>
     <?php include 'components/services.php'; ?>
     <?php include 'components/footer.php'; ?>
