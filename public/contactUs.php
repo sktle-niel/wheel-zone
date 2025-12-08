@@ -83,6 +83,9 @@
             border-radius: 10px;
             margin-bottom: 2rem;
         }
+        .contact-form {
+            font-family: sans-serif;
+        }
         .contact-form h3, .contact-info h3 {
             color: #41CE34;
             margin-bottom: 1.5rem;
@@ -93,6 +96,7 @@
         }
         .form-group label {
             color: #fff;
+            text-align: left;
         }
         .form-group input, .form-group textarea {
             width: 100%;
@@ -156,6 +160,10 @@
             .row.mt-5 .col-md-6:last-child {
                 margin-bottom: 0;
             }
+            .form-group label {
+                display: block;
+                text-align: left !important;
+            }
         }
 
         @media (max-width: 576px) {
@@ -190,6 +198,10 @@
                 padding: 0.6rem;
                 font-size: 0.9rem;
             }
+            .form-group label {
+                display: block;
+                text-align: left !important;
+            }
         }
     </style>
 </head>
@@ -215,21 +227,21 @@
                 <div class="col-md-6">
                     <div class="contact-form">
                         <h3>Send us a Message</h3>
-                        <form action="#" method="post">
+                        <form action="../sendMessage.php" method="post">
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name" class="text-start">Name</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email" class="text-start">Email</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Subject</label>
+                                <label for="subject" class="text-start">Subject</label>
                                 <input type="text" id="subject" name="subject" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Message</label>
+                                <label for="message" class="text-start">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
                             <button type="submit" class="btn-submit">Send Message</button>

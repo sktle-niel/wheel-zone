@@ -1,6 +1,1 @@
-- [x] Restructure footer.php HTML into a multi-column layout similar to Toyota's footer (e.g., columns for About, Useful Links, Engage, Support & Help, Partners, Social)
-- [x] Ensure existing links and content are preserved without changes
-- [x] Update responsive CSS to maintain layout on mobile
-- [x] Test the footer layout for responsiveness
-- [x] Create franchiseUs.php with parallax effect featuring "Get in Touch" text on image and contact form with name, mobile (+639 prefix), email, how did you find us, franchise location, and message fields
-- [x] Remove custom font styles from form controls in franchiseUs.php
+- [x] Create public/index.php with PHP redirect to home.php
