@@ -9,6 +9,9 @@
             <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" style="outline: none !important; border: none !important;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Close"></button>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
+                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./home.php">Home</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
@@ -58,6 +61,7 @@
                 transform: translateX(100%);
                 transition: transform 0.3s ease;
                 z-index: 1050;
+                overflow-y: auto;
             }
             .navbar-collapse.show {
                 transform: translateX(0);
@@ -129,34 +133,55 @@
         }
     </style>
     <script>
-        let lastScrollTop = 0;
         const navbar = document.getElementById('navbar');
         const toggler = document.querySelector('.navbar-toggler');
 
+        // Change background on scroll
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                navbar.style.top = '-100px'; // Hide navbar
-            } else {
-                // Scrolling up
-                navbar.style.top = '0'; // Show navbar
-            }
 
             if (scrollTop > 0) {
                 navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Slight black glassy
             } else {
                 navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; // Original glassy
             }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
         });
 
         // Toggle animation for hamburger
         toggler.addEventListener('click', function() {
             this.classList.toggle('open');
         });
+
+        // Prevent body scroll when navbar is open on mobile
+        const collapseElement = document.getElementById('navbarSupportedContent');
+        collapseElement.addEventListener('show.bs.collapse', function () {
+            document.body.style.overflow = 'hidden';
+            // Prevent touch scrolling on the body when navbar is open
+            document.body.addEventListener('touchmove', preventBodyScroll, { passive: false });
+            // Make navbar fixed when collapse is open on mobile
+            if (window.innerWidth <= 767) {
+                navbar.style.position = 'fixed';
+                navbar.style.top = '0';
+                navbar.style.left = '0';
+                navbar.style.width = '100%';
+                navbar.style.zIndex = '1051';
+            }
+        });
+        collapseElement.addEventListener('hide.bs.collapse', function () {
+            document.body.style.overflow = 'auto';
+            // Remove the touchmove listener
+            document.body.removeEventListener('touchmove', preventBodyScroll, { passive: false });
+            // Reset navbar position
+            navbar.style.position = '';
+            navbar.style.top = '';
+            navbar.style.left = '';
+            navbar.style.width = '';
+            navbar.style.zIndex = '';
+        });
+
+        function preventBodyScroll(e) {
+            e.preventDefault();
+        }
     </script>
 </nav>
 

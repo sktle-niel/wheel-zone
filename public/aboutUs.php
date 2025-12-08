@@ -81,6 +81,7 @@
         @media (max-width: 768px) {
             .parallax {
                 height: 70vh;
+                background-attachment: scroll !important;
             }
             .parallax-content {
                 left: 50%;
