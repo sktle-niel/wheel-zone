@@ -169,29 +169,50 @@
 
         // Prevent body scroll when navbar is open on mobile
         const collapseElement = document.getElementById('navbarSupportedContent');
+        let scrollPosition = 0;
+        let navbarPlaceholder = null;
         collapseElement.addEventListener('show.bs.collapse', function () {
-            document.body.style.overflow = 'hidden';
+            scrollPosition = window.pageYOffset;
+            document.documentElement.style.overflow = 'hidden';
+            document.documentElement.style.position = 'fixed';
+            document.documentElement.style.top = `-${scrollPosition}px`;
+            document.documentElement.style.width = '100%';
             // Prevent touch scrolling on the body when navbar is open
             document.body.addEventListener('touchmove', preventBodyScroll, { passive: false });
             // Make navbar fixed when collapse is open on mobile
             if (window.innerWidth <= 767) {
+                navbar.classList.remove('sticky-top');
                 navbar.style.position = 'fixed';
                 navbar.style.top = '0';
                 navbar.style.left = '0';
                 navbar.style.width = '100%';
                 navbar.style.zIndex = '1051';
+                // Create a placeholder to prevent content shift
+                navbarPlaceholder = document.createElement('div');
+                navbarPlaceholder.style.height = navbar.offsetHeight + 'px';
+                navbar.parentNode.insertBefore(navbarPlaceholder, navbar);
             }
         });
         collapseElement.addEventListener('hide.bs.collapse', function () {
-            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+            document.documentElement.style.position = '';
+            document.documentElement.style.top = '';
+            document.documentElement.style.width = '';
+            window.scrollTo(0, scrollPosition);
             // Remove the touchmove listener
             document.body.removeEventListener('touchmove', preventBodyScroll, { passive: false });
             // Reset navbar position
+            navbar.classList.add('sticky-top');
             navbar.style.position = '';
             navbar.style.top = '';
             navbar.style.left = '';
             navbar.style.width = '';
             navbar.style.zIndex = '';
+            // Remove placeholder
+            if (navbarPlaceholder) {
+                navbarPlaceholder.remove();
+                navbarPlaceholder = null;
+            }
         });
 
         function preventBodyScroll(e) {
