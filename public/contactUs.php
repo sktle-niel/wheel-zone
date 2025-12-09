@@ -213,7 +213,7 @@
             <h1>Contact Us</h1>
             <p>Get in touch with us for all your motorcycle needs. We're here to help you ride better.</p>
         </div>
-    </section>
+    </section>  
 
     <section class="contact-content">
         <div class="container">
@@ -221,6 +221,11 @@
                 <div class="col-12">
                     <h2 class="text-center">Reach Out to Us</h2>
                     <p class="text-center">Have questions about our services, need assistance with your motorcycle, or interested in franchising? We're just a call or message away. Our team is ready to provide you with expert advice and top-notch service.</p>
+                    <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
+                        <div id="success-alert" class="alert alert-success text-center" role="alert">
+                            Thank you for your message! We will get back to you soon.
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="row mt-5">
@@ -254,8 +259,7 @@
                         <p><i class="bi bi-telephone"></i> <strong>Globe:</strong> 0966 061 9979</p>
                         <p><i class="bi bi-telephone"></i> <strong>Smart:</strong> 0919 269 4103</p>
                         <p><i class="bi bi-facebook"></i> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Follow us on Facebook</a></p>
-                        <p><i class="bi bi-geo-alt"></i> <strong>Located Branch:</strong> [Insert Address Here]</p>
-                        <p><i class="bi bi-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 8AM-6PM</p>
+                        <p><i class="bi bi-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                     </div>
                 </div>
             </div>
@@ -272,5 +276,18 @@
     <?php include 'components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fade out success alert after 5 seconds
+        setTimeout(function() {
+            const alert = document.getElementById('success-alert');
+            if (alert) {
+                alert.style.transition = 'opacity 1s';
+                alert.style.opacity = '0';
+                setTimeout(function() {
+                    alert.style.display = 'none';
+                }, 1000);
+            }
+        }, 5000);
+    </script>
 </body>
 </html>

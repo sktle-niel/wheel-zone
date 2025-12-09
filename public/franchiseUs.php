@@ -68,6 +68,13 @@
         background-color: rgba(255, 255, 255, 0.1);
         border: 1px solid #41CE34;
         font-family: Arial, sans-serif;
+        color: #fff !important;
+    }
+    select.form-control {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .form-control option {
+        background-color: rgba(0, 0, 0, 0.8);
         color: #fff;
     }
     .form-control::placeholder {
@@ -121,7 +128,11 @@
             padding-left: 0.5rem;
         }
         .form-label {
-            text-align: left;
+            text-align: left !important;
+            display: block !important;
+        }
+        .form-control {
+            text-align: left !important;
         }
         .franchise-form {
             padding: 1rem 0;
@@ -159,7 +170,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="mobile" class="form-label">Mobile Number</label>
                                 <div class="input-group">
-                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #41CE34; color: #fff;">+639</span>
+                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #41CE34; color: #fff;">+63</span>
                                     <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{9}" placeholder="XXXXXXXXX" required>
                                 </div>
                             </div>
