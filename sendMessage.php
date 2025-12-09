@@ -102,7 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <body>
                 <div class='container'>
                     <div class='header'>
-                        <img src='http://localhost/moto-page/assets/branding/lucent.png' alt='Two Wheels Zone Logo'>
                         <h1>Two Wheels Zone</h1>
                     </div>
                     <div class='content'>
