@@ -6,17 +6,16 @@
     <title>About Us - Two Wheels Zone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 
 
     <style>
     body {
-        font-family: "Zen Dots", sans-serif;
+        font-family: "Anton", sans-serif;
         font-weight: 400;
         font-style: normal;
-        letter-spacing: 1px;
     }
 
     </style>
@@ -77,6 +76,7 @@
         .about-content p {
             text-align: justify;
             line-height: 1.6;
+            font-size: 24px;
         }
         @media (max-width: 768px) {
             .parallax {

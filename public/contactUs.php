@@ -58,7 +58,7 @@
             border-bottom: 5px solid #41CE34;
         }
         .parallax-content p {
-            font-size: 1.2rem;
+            font-size: 24px;
             max-width: 700px;
             margin: 0 auto;
             text-align: justify;
@@ -76,6 +76,7 @@
         .contact-content p {
             text-align: justify;
             line-height: 1.6;
+            font-size: 24px;
         }
         .contact-form, .contact-info {
             background: rgba(0, 0, 0, 0.8);
@@ -84,7 +85,8 @@
             margin-bottom: 2rem;
         }
         .contact-form {
-            font-family: sans-serif;
+            font-size: 21px;
+
         }
         .contact-form h3, .contact-info h3 {
             color: #41CE34;
@@ -105,8 +107,7 @@
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
-            font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        }
+                }
         .btn-submit {
             width: 100%;
             padding: 0.75rem;
@@ -116,6 +117,7 @@
             color: #000;
             font-weight: bold;
             cursor: pointer;
+            font-size: 24px;
         }
         .btn-submit:hover {
             background: #2E8B57;
@@ -213,7 +215,7 @@
             <h1>Contact Us</h1>
             <p>Get in touch with us for all your motorcycle needs. We're here to help you ride better.</p>
         </div>
-    </section>
+    </section>  
 
     <section class="contact-content">
         <div class="container">
@@ -221,6 +223,11 @@
                 <div class="col-12">
                     <h2 class="text-center">Reach Out to Us</h2>
                     <p class="text-center">Have questions about our services, need assistance with your motorcycle, or interested in franchising? We're just a call or message away. Our team is ready to provide you with expert advice and top-notch service.</p>
+                    <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
+                        <div id="success-alert" class="alert alert-success text-center" role="alert">
+                            Thank you for your message! We will get back to you soon.
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="row mt-5">
@@ -251,11 +258,9 @@
                 <div class="col-md-6">
                     <div class="contact-info">
                         <h3>Get in Touch</h3>
-                        <p><i class="bi bi-telephone"></i> <strong>Globe:</strong> 0966 061 9979</p>
-                        <p><i class="bi bi-telephone"></i> <strong>Smart:</strong> 0919 269 4103</p>
+                        <p><i class="bi bi-telephone"></i> <strong>09166842718</p>
                         <p><i class="bi bi-facebook"></i> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Follow us on Facebook</a></p>
-                        <p><i class="bi bi-geo-alt"></i> <strong>Located Branch:</strong> [Insert Address Here]</p>
-                        <p><i class="bi bi-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 8AM-6PM</p>
+                        <p><i class="bi bi-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                     </div>
                 </div>
             </div>
@@ -272,5 +277,18 @@
     <?php include 'components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fade out success alert after 5 seconds
+        setTimeout(function() {
+            const alert = document.getElementById('success-alert');
+            if (alert) {
+                alert.style.transition = 'opacity 1s';
+                alert.style.opacity = '0';
+                setTimeout(function() {
+                    alert.style.display = 'none';
+                }, 1000);
+            }
+        }, 5000);
+    </script>
 </body>
 </html>

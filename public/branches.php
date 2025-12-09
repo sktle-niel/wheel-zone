@@ -59,6 +59,7 @@
             max-width: 700px;
             margin: 0 auto;
             text-align: justify;
+            font-size: 24px;
         }
         .branches-content {
             padding: 4rem 0;
@@ -74,6 +75,7 @@
         .branches-content p {
             text-align: justify;
             line-height: 1.6;
+            font-size: 24px;
         }
         .branch-card {
             background: rgba(0, 0, 0, 0.8);
@@ -163,19 +165,21 @@
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="branch-card">
-                        <h3>Main Branch</h3>
-                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> 123 Main Street, City Center, Metro Manila</p>
-                        <p><i class="bi bi-telephone"></i> <strong>Phone:</strong> 0966 061 9979</p>
-                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 8AM-6PM</p>
+                        <h3>Sicsican Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> QPW8+5JF, Puerto Princesa South Road, Puerto Princesa City, Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone/@9.7714938,118.7093693,14z/data=!4m10!1m2!2m1!1sTwo+Wheels+Zone+sicsican!3m6!1s0x33b562e0f9f3c525:0x6871ef1f501af47!8m2!3d9.7954403!4d118.7165457!15sChhUd28gV2hlZWxzIFpvbmUgc2ljc2ljYW6SARBhdXRvX3BhcnRzX3N0b3Jl4AEA!16s%2Fg%2F11xrw4l_sq?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-light">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Full motorcycle repair, parts, accessories</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="branch-card">
-                        <h3>North Branch</h3>
-                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> 456 North Avenue, Quezon City, Metro Manila</p>
-                        <p><i class="bi bi-telephone"></i> <strong>Phone:</strong> 0919 269 4103</p>
-                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 8AM-6PM</p>
+                        <h3>Malvar Road Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> 329 Malvar Road, Puerto Princesa City, 5300 Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone/@9.7474692,118.7408171,17z/data=!3m1!4b1!4m6!3m5!1s0x33b563eb61d65407:0xeb029b393a73ae04!8m2!3d9.7474639!4d118.743392!16s%2Fg%2F11qh58crq0?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-light">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Motorcycle maintenance, customization</p>
                     </div>
                 </div>
@@ -183,20 +187,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="branch-card">
-                        <h3>South Branch</h3>
-                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> 789 South Boulevard, Makati City, Metro Manila</p>
-                        <p><i class="bi bi-telephone"></i> <strong>Phone:</strong> 0966 061 9980</p>
-                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 8AM-6PM</p>
+                        <h3>Elnido Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Sitio Nasigdan Brgy. Villa Libertad Elnido, PUERTO PRINCESA, 5300 Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone+Elnido+Branch/@11.1849735,119.4026727,17z/data=!3m1!4b1!4m6!3m5!1s0x33b655b59689923b:0xbd05adb45cb27eb5!8m2!3d11.1849682!4d119.4052476!16s%2Fg%2F11trrczjpl?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-light">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Emergency repairs, tire services</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="branch-card">
-                        <h3>East Branch</h3>
-                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> 101 East Road, Pasig City, Metro Manila</p>
-                        <p><i class="bi bi-telephone"></i> <strong>Phone:</strong> 0919 269 4104</p>
-                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 8AM-6PM</p>
-                        <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Full service center, parts warehouse</p>
                     </div>
                 </div>
             </div>
