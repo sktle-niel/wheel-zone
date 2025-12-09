@@ -176,8 +176,9 @@
                             <div class="col-md-6 mb-3">
                                 <label for="mobile" class="form-label">Mobile Number</label>
                                 <div class="input-group">
-                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #41CE34; color: #fff;">+63</span>
-                                    <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="9123456789" required>
+                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #41CE34; color: #fff; font-family: "Anton", sans-serif;
+">+63</span>
+                                    <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="9123456789" title="Please enter exactly 10 digits (e.g., 9123456789)" required>
                                 </div>
                             </div>
                         </div>
