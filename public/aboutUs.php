@@ -102,7 +102,7 @@
                 margin-bottom: 1.5rem;
             }
             .about-content p {
-                font-size: 0.9rem;
+                font-size: 24px;
                 line-height: 1.5;
             }
             .row.mt-5 .col-md-6 {
@@ -132,7 +132,7 @@
                     <p>Our team of skilled professionals is passionate about motorcycles and committed to ensuring every rider's safety and satisfaction. From routine maintenance to custom upgrades, we offer a wide range of services tailored to meet your specific needs.</p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" >
                 <div class="col-md-6">
                     <h2>Our History</h2>
                     <p>Founded in 2015, Two Wheels Zone started as a small workshop with a vision to revolutionize motorcycle servicing in the Philippines. What began as a passion project by a group of motorcycle enthusiasts has grown into a trusted name in the industry.</p>

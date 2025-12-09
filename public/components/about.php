@@ -47,7 +47,7 @@
         <div class="row mt-5">
             <div class="col-12 text-center">
                 <h3 style="color: #41CE34; text-transform: uppercase;">Our Mission</h3>
-                <p class="mt-3">To empower motorcycle enthusiasts by providing top-tier maintenance, customization, and repair services that ensure every ride is safe, exhilarating, and unforgettable. We believe in the freedom of the open road and are committed to keeping your motorcycle performing at its best.</p>
+                <p class="mt-3" style="font-size: 19px;">To empower motorcycle enthusiasts by providing top-tier maintenance, customization, and repair services that ensure every ride is safe, exhilarating, and unforgettable. We believe in the freedom of the open road and are committed to keeping your motorcycle performing at its best.</p>
             </div>
         </div>
     </div>
