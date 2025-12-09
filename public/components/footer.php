@@ -1,9 +1,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: "Zen Dots", sans-serif;
+        font-family: "Bebas Neue", sans-serif;
         font-weight: 400;
         font-style: normal;
         letter-spacing: 1px;
@@ -34,8 +34,7 @@
                 </ul>
                 <h6>Support & Help</h6>
                 <ul class="list-unstyled">
-                    <li>0966 061 9979 (Globe)</li>
-                    <li>0919 269 4103 (Smart)</li>
+                    <li>09166842718</li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-3">
@@ -60,11 +59,11 @@
     </div>
     <style>
         footer h6 {
-            font-size: 1rem;
+            font-size: 24px !important;
             margin-bottom: 1rem;
         }
         footer p, footer li {
-            font-size: 0.85rem;
+            font-size: 19px !important;
         }
         footer a:hover {
             color: #ccc !important;

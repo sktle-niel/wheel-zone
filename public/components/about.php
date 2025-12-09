@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-6">
                 <h2 class="text-center mb-4" style="color: #41CE34; text-transform: uppercase;">About Two Wheels Zone</h2>
-                <p class="lead">Two Wheel Zone is your premier destination for all things related to motorcycle parts and services. We specialize in providing high-quality parts, expert maintenance, and comprehensive services for motorcycles.</p>
+                <p class="lead" style ="font-size: 24px;">Two Wheel Zone is your premier destination for all things related to motorcycle parts and services. We specialize in providing high-quality parts, expert maintenance, and comprehensive services for motorcycles.</p>
                 <p>Whether you're looking for upgrades, repairs, or routine check-ups, our team of experienced professionals is dedicated to keeping your two-wheeled adventures running smoothly. From FI cleaning to ECU remapping, we offer a wide range of services to meet all your motorcycle needs.</p>
 
                 <!-- Key Features -->

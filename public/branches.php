@@ -59,6 +59,7 @@
             max-width: 700px;
             margin: 0 auto;
             text-align: justify;
+            font-size: 24px;
         }
         .branches-content {
             padding: 4rem 0;
@@ -74,6 +75,7 @@
         .branches-content p {
             text-align: justify;
             line-height: 1.6;
+            font-size: 24px;
         }
         .branch-card {
             background: rgba(0, 0, 0, 0.8);

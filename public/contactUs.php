@@ -58,7 +58,7 @@
             border-bottom: 5px solid #41CE34;
         }
         .parallax-content p {
-            font-size: 1.2rem;
+            font-size: 24px;
             max-width: 700px;
             margin: 0 auto;
             text-align: justify;
@@ -76,6 +76,7 @@
         .contact-content p {
             text-align: justify;
             line-height: 1.6;
+            font-size: 24px;
         }
         .contact-form, .contact-info {
             background: rgba(0, 0, 0, 0.8);
@@ -84,7 +85,8 @@
             margin-bottom: 2rem;
         }
         .contact-form {
-            font-family: sans-serif;
+            font-size: 21px;
+
         }
         .contact-form h3, .contact-info h3 {
             color: #41CE34;
@@ -105,8 +107,7 @@
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
-            font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        }
+                }
         .btn-submit {
             width: 100%;
             padding: 0.75rem;
@@ -116,6 +117,7 @@
             color: #000;
             font-weight: bold;
             cursor: pointer;
+            font-size: 24px;
         }
         .btn-submit:hover {
             background: #2E8B57;
@@ -256,8 +258,7 @@
                 <div class="col-md-6">
                     <div class="contact-info">
                         <h3>Get in Touch</h3>
-                        <p><i class="bi bi-telephone"></i> <strong>Globe:</strong> 0966 061 9979</p>
-                        <p><i class="bi bi-telephone"></i> <strong>Smart:</strong> 0919 269 4103</p>
+                        <p><i class="bi bi-telephone"></i> <strong>09166842718</p>
                         <p><i class="bi bi-facebook"></i> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Follow us on Facebook</a></p>
                         <p><i class="bi bi-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                     </div>

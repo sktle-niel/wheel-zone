@@ -1,13 +1,17 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: "Zen Dots", sans-serif;
+        font-family: "Bebas Neue", sans-serif;
         font-weight: 400;
         font-style: normal;
         letter-spacing: 1px;
+    }
+
+    .nav-link  {
+        font-size: 24px !important;
     }
 </style>
 <nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px); transition: all 0.3s ease; border-bottom: none;">
@@ -20,19 +24,19 @@
             <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" style="outline: none !important; border: none !important;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Close"></button>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./home.php">Home</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./aboutUs.php">About Us</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./franchiseUs.php">Franchise Us</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./franchiseUs.php">Franchise Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./contactUs.php">Contact Us</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./contactUs.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: large; color: #ffffff !important;" href="./branches.php">Located Branch</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./branches.php">Located Branch</a>
                 </li>
             </ul>
         </div>
