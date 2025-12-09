@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Port = SMTP_PORT;
 
         $mail->setFrom(SENDER_EMAIL, $name);
-        $mail->addAddress('niel.ladica07@gmail.com');
+        $mail->addAddress('twowheelszonehost@gmail.com');
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
@@ -104,7 +104,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <body>
                 <div class='container'>
                     <div class='header'>
-                        <img src='http://localhost/moto-page/assets/branding/lucent.png' alt='Two Wheels Zone Logo'>
                         <h1>Two Wheels Zone</h1>
                     </div>
                     <div class='content'>
