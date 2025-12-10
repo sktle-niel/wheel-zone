@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franchise Us - Two Wheels Zone</title>
+    <link rel="shortcut icon" href="../lucent.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
         font-weight: 400;
         font-style: normal;
         letter-spacing: 1px;
+        background: #FFFFFF;
     }
 
     .parallax {
@@ -55,8 +57,8 @@
     }
     .franchise-form {
         padding: 4rem 0;
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-        color: #fff;
+        background: #FFFFFF;
+        color: #2c3e50;
         font-size: 21px;
 
     }
@@ -67,27 +69,31 @@
         text-align: center;
         
     }
+    .form-label {
+        color: #2c3e50;
+    }
     .form-control {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: #FFFFFF;
         border: 1px solid #41CE34;
-        color: #fff !important;
+        color: #2c3e50 !important;
         font-size: 19px;
     }
     select.form-control {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: #FFFFFF;
         font-size: 19px;
     }
     .form-control option {
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
+        background-color: #FFFFFF;
+        color: #2c3e50;
     }
     .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.7) !important;
+        color: rgba(44, 62, 80, 0.6) !important;
     }
     .form-control:focus {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: #FFFFFF;
         border-color: #41CE34;
         box-shadow: 0 0 0 0.2rem rgba(65, 206, 52, 0.25);
+        color: #2c3e50 !important;
     }
     .btn-submit {
         background-color: #41CE34;
@@ -151,7 +157,7 @@
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="margin-top: -120px;">
+    <section class="parallax" style="">
         <div class="parallax-content">
             <h1>Get in Touch</h1>
         </div>
@@ -176,7 +182,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="mobile" class="form-label">Mobile Number</label>
                                 <div class="input-group">
-                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #41CE34; color: #fff; font-family: "Anton", sans-serif;
+                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: #FFFFFF; border: 1px solid #41CE34; color: #2c3e50; font-family: "Anton", sans-serif;
 ">+63</span>
                                     <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="9123456789" title="Please enter exactly 10 digits (e.g., 9123456789)" required>
                                 </div>
@@ -206,7 +212,7 @@
                             <textarea class="form-control" id="message" name="message" rows="4"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-submit">Submit Inquiry</button>
+                            <button type="submit" class="btn btn-submit" style="letter-spacing: 2px !important;">Submit Inquiry</button>
                         </div>
                     </form>
                 </div>

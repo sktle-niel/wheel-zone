@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Branches - Two Wheels Zone</title>
+    <link rel="shortcut icon" href="../lucent.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
         font-weight: 400;
         font-style: normal;
         letter-spacing: 1px;
+        background: #FFFFFF;
     }
 
     </style>
@@ -63,8 +65,8 @@
         }
         .branches-content {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #fff;
+            background: #FFFFFF;
+            color: #2c3e50;
         }
         .branches-content h2 {
             color: #41CE34;
@@ -76,13 +78,15 @@
             text-align: justify;
             line-height: 1.6;
             font-size: 24px;
+            color: #34495e;
         }
         .branch-card {
-            background: rgba(0, 0, 0, 0.8);
+            background: #FFFFFF;
             padding: 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
-            border: 1px solid #41CE34;
+            border: 1px solid rgba(65, 206, 52, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
         .branch-card h3 {
             color: #41CE34;
@@ -90,6 +94,15 @@
         }
         .branch-card p {
             margin-bottom: 0.5rem;
+            color: #34495e;
+        }
+        .branch-card a {
+            color: #41CE34;
+            text-decoration: none;
+        }
+        .branch-card a:hover {
+            color: #36b32a;
+            text-decoration: underline;
         }
         .branch-card i {
             color: #41CE34;
@@ -147,7 +160,7 @@
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="margin-top: -120px;">
+    <section class="parallax" style="">
         <div class="parallax-content">
             <h1>Our Branches</h1>
             <p>Find a Two Wheels Zone branch near you. Visit us for all your motorcycle needs.</p>
@@ -167,8 +180,8 @@
                     <div class="branch-card">
                         <h3>Sicsican Branch</h3>
                         <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> QPW8+5JF, Puerto Princesa South Road, Puerto Princesa City, Palawan</p>
-                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone/@9.7714938,118.7093693,14z/data=!4m10!1m2!2m1!1sTwo+Wheels+Zone+sicsican!3m6!1s0x33b562e0f9f3c525:0x6871ef1f501af47!8m2!3d9.7954403!4d118.7165457!15sChhUd28gV2hlZWxzIFpvbmUgc2ljc2ljYW6SARBhdXRvX3BhcnRzX3N0b3Jl4AEA!16s%2Fg%2F11xrw4l_sq?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-light">View on Google Maps</a></p>
-                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone/@9.7714938,118.7093693,14z/data=!4m10!1m2!2m1!1sTwo+Wheels+Zone+sicsican!3m6!1s0x33b562e0f9f3c525:0x6871ef1f501af47!8m2!3d9.7954403!4d118.7165457!15sChhUd28gV2hlZWxzIFpvbmUgc2ljc2ljYW6SARBhdXRvX3BhcnRzX3N0b3Jl4AEA!16s%2Fg%2F11xrw4l_sq?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
                         <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Full motorcycle repair, parts, accessories</p>
                     </div>
@@ -177,8 +190,8 @@
                     <div class="branch-card">
                         <h3>Malvar Road Branch</h3>
                         <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> 329 Malvar Road, Puerto Princesa City, 5300 Palawan</p>
-                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone/@9.7474692,118.7408171,17z/data=!3m1!4b1!4m6!3m5!1s0x33b563eb61d65407:0xeb029b393a73ae04!8m2!3d9.7474639!4d118.743392!16s%2Fg%2F11qh58crq0?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-light">View on Google Maps</a></p>
-                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone/@9.7474692,118.7408171,17z/data=!3m1!4b1!4m6!3m5!1s0x33b563eb61d65407:0xeb029b393a73ae04!8m2!3d9.7474639!4d118.743392!16s%2Fg%2F11qh58crq0?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
                         <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Motorcycle maintenance, customization</p>
                     </div>
@@ -189,8 +202,8 @@
                     <div class="branch-card">
                         <h3>Elnido Branch</h3>
                         <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Sitio Nasigdan Brgy. Villa Libertad Elnido, PUERTO PRINCESA, 5300 Palawan</p>
-                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone+Elnido+Branch/@11.1849735,119.4026727,17z/data=!3m1!4b1!4m6!3m5!1s0x33b655b59689923b:0xbd05adb45cb27eb5!8m2!3d11.1849682!4d119.4052476!16s%2Fg%2F11trrczjpl?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-light">View on Google Maps</a></p>
-                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" class="text-light">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="https://www.google.com/maps/place/Two+Wheels+Zone+Elnido+Branch/@11.1849735,119.4026727,17z/data=!3m1!4b1!4m6!3m5!1s0x33b655b59689923b:0xbd05adb45cb27eb5!8m2!3d11.1849682!4d119.4052476!16s%2Fg%2F11trrczjpl?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
                         <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Emergency repairs, tire services</p>
                     </div>

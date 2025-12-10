@@ -10,33 +10,33 @@
             </div>
             <div class="col-md-6">
                 <h2 class="text-center mb-4" style="color: #41CE34; text-transform: uppercase;">About Two Wheels Zone</h2>
-                <p class="lead" style ="font-size: 24px;">Two Wheel Zone is your premier destination for all things related to motorcycle parts and services. We specialize in providing high-quality parts, expert maintenance, and comprehensive services for motorcycles.</p>
-                <p>Whether you're looking for upgrades, repairs, or routine check-ups, our team of experienced professionals is dedicated to keeping your two-wheeled adventures running smoothly. From FI cleaning to ECU remapping, we offer a wide range of services to meet all your motorcycle needs.</p>
+                <p class="lead" style="font-size: 24px; color: #2c3e50;">Two Wheel Zone is your premier destination for all things related to motorcycle parts and services. We specialize in providing high-quality parts, expert maintenance, and comprehensive services for motorcycles.</p>
+                <p style="color: #34495e;">Whether you're looking for upgrades, repairs, or routine check-ups, our team of experienced professionals is dedicated to keeping your two-wheeled adventures running smoothly. From FI cleaning to ECU remapping, we offer a wide range of services to meet all your motorcycle needs.</p>
 
                 <!-- Key Features -->
                 <div class="row mt-4">
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
                             <i class="bi bi-tools fs-2 text-success mb-2"></i>
-                            <h6>Expert Mechanics</h6>
+                            <h6 style="color: #2c3e50;">Expert Mechanics</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
                             <i class="bi bi-award fs-2 text-success mb-2"></i>
-                            <h6>Quality Parts</h6>
+                            <h6 style="color: #2c3e50;">Quality Parts</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
                             <i class="bi bi-clock fs-2 text-success mb-2"></i>
-                            <h6>Fast Service</h6>
+                            <h6 style="color: #2c3e50;">Fast Service</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-item text-center mb-3">
                             <i class="bi bi-shield-check fs-2 text-success mb-2"></i>
-                            <h6>Guaranteed Work</h6>
+                            <h6 style="color: #2c3e50;">Guaranteed Work</h6>
                         </div>
                     </div>
                 </div>
@@ -47,26 +47,27 @@
         <div class="row mt-5">
             <div class="col-12 text-center">
                 <h3 style="color: #41CE34; text-transform: uppercase;">Our Mission</h3>
-                <p class="mt-3" style="font-size: 19px;">To empower motorcycle enthusiasts by providing top-tier maintenance, customization, and repair services that ensure every ride is safe, exhilarating, and unforgettable. We believe in the freedom of the open road and are committed to keeping your motorcycle performing at its best.</p>
+                <p class="mt-3" style="font-size: 19px; color: #34495e;">To empower motorcycle enthusiasts by providing top-tier maintenance, customization, and repair services that ensure every ride is safe, exhilarating, and unforgettable. We believe in the freedom of the open road and are committed to keeping your motorcycle performing at its best.</p>
             </div>
         </div>
     </div>
 
     <style>
         .about {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #fff;
+            background: #FFFFFF;
+            color: #2c3e50;
         }
         .about p, .about .lead {
             text-align: justify;
         }
         .feature-item {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 50, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
             border: 1px solid rgba(65, 206, 52, 0.3);
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 15px;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
         .feature-item:hover {
             transform: translateY(-5px);

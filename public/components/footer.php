@@ -9,7 +9,7 @@
         letter-spacing: 1px;
     }
 </style>
-<footer style="background-color: #111; color: #fff;" class="py-5">
+<footer style="background-color: #1a1a1a; color: #fff;" class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-4 px-3">
@@ -32,9 +32,9 @@
                     <li><a href="./termsOfService.php" class="text-light">Terms of Service</a></li>
                     <li><a href="./privacyPolicy.php" class="text-light">Privacy Policy</a></li>
                 </ul>
-                <h6>Support & Help</h6>
+                <h6>Company Number</h6>
                 <ul class="list-unstyled">
-                    <li>09166842718</li>
+                    <li>09369510201</li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-3">

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Two Wheels Zone</title>
+    <link rel="shortcut icon" href="../lucent.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
         font-family: "Anton", sans-serif;
         font-weight: 400;
         font-style: normal;
+        background: #FFFFFF;
     }
 
     </style>
@@ -65,8 +67,8 @@
         }
         .about-content {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #fff;
+            background: #FFFFFF;
+            color: #2c3e50;
         }
         .about-content h2 {
             color: #41CE34;
@@ -77,6 +79,7 @@
             text-align: justify;
             line-height: 1.6;
             font-size: 24px;
+            color: #34495e;
         }
         @media (max-width: 768px) {
             .parallax {
@@ -117,7 +120,7 @@
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="margin-top: -120px;">
+    <section class="parallax" style="margin-top: 0px;">
         <div class="parallax-content">
             <h1>About Two Wheels Zone</h1>
         </div>
@@ -141,12 +144,12 @@
                 <div class="col-md-6">
                     <h2 class="text-left">Our Advantages</h2>
                     <ul class="list-unstyled text-left">
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Expert technicians with years of experience</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genuine parts from trusted manufacturers</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Fast and reliable service</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Competitive pricing</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Comprehensive warranty on all work</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Convenient location and flexible hours</li>
+                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Expert technicians with years of experience</li>
+                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Genuine parts from trusted manufacturers</li>
+                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Fast and reliable service</li>
+                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Competitive pricing</li>
+                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Comprehensive warranty on all work</li>
+                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Convenient location and flexible hours</li>
                     </ul>
                 </div>
             </div>

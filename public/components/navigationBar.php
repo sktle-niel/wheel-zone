@@ -14,7 +14,7 @@
         font-size: 24px !important;
     }
 </style>
-<nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px); transition: all 0.3s ease; border-bottom: none;">
+<nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); transition: all 0.3s ease; border-bottom: 1px solid rgba(65, 206, 52, 0.2); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
     <div class="container-fluid">
         <a class="navbar-brand" href="./home.php"><img src="../assets/branding/lucent.png" alt="Moto Brand Logo" height="90"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,24 +24,29 @@
             <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" style="outline: none !important; border: none !important;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Close"></button>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./home.php">Home</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #2c3e50 !important;" href="./home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./aboutUs.php">About Us</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #2c3e50 !important;" href="./aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./franchiseUs.php">Franchise Us</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #2c3e50 !important;" href="./franchiseUs.php">Franchise Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./contactUs.php">Contact Us</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #2c3e50 !important;" href="./contactUs.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: 1.1rem; color: #ffffff !important;" href="./branches.php">Located Branch</a>
+                    <a class="nav-link" style="font-size: 1.1rem; color: #2c3e50 !important;" href="./branches.php">Located Branch</a>
                 </li>
             </ul>
         </div>
     </div>
     <style>
+        #navbar {
+            background-color: rgba(255, 255, 255, 0.75) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        }
         .navbar-brand img {
             height: 90px !important;
         }
@@ -72,11 +77,15 @@
                 right: 0;
                 width: 68%;
                 height: 100vh;
-                background-color: rgba(0, 0, 0, 1);
+                background-color: rgba(255, 255, 255, 0.85);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
                 transform: translateX(100%);
                 transition: transform 0.3s ease;
                 z-index: 1050;
                 overflow-y: auto;
+                box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+                border-left: 1px solid rgba(65, 206, 52, 0.2);
             }
             .navbar-collapse.show {
                 transform: translateX(0);
@@ -156,9 +165,11 @@
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > 0) {
-                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Slight black glassy
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; // More opaque on scroll
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; // Original glassy
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.75)'; // Original glassy
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
             }
         });
 
