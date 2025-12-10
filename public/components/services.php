@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../assets/css/services.css">
 <section class="services py-5">
     <div class="container">
         <h2 class="text-center mb-4" style="color: #41CE34; text-transform: uppercase;">Our Services</h2>
@@ -160,80 +161,6 @@
             </div>
         </div>
     </div>
-    <style>
-        .services {
-            background: #FFFFFF;
-            color: #2c3e50;
-        }
-        .card {
-            min-height: 140px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.98) 100%);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(65, 206, 52, 0.3);
-            border-radius: 15px;
-            color: #2c3e50;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(243, 22, 20, 0.4);
-            border-color: rgba(243, 22, 20, 0.6);
-        }
-        .card:hover .bi {
-            transform: scale(1.1) rotate(5deg);
-            transition: transform 0.3s ease;
-        }
-        .hidden {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .service-card {
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fading {
-            opacity: 0 !important;
-            transform: scale(0.95);
-        }
-        .show-more-link {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .show-more-link:hover {
-            background-color: #41CE34 !important;
-            border-color: #41CE34 !important;
-            color: #000 !important;
-        }
-        #show-more-container.expanded {
-            position: relative;
-            top: -100px; /* adjust as needed to move up */
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-        }
-        @media (min-width: 768px) {
-            #services-carousel {
-                display: none;
-            }
-        }
-        @media (max-width: 767px) {
-            #services-grid {
-                display: none;
-            }
-            .card {
-                min-height: 120px;
-            }
-            .card-title {
-                font-size: 1rem;
-            }
-        }
-    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const showMoreText = document.getElementById('show-more-text');

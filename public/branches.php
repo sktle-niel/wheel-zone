@@ -10,157 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-    body {
-        font-family: "Zen Dots", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: 1px;
-        background: #FFFFFF;
-    }
-
-    </style>
-
-    <style>
-        .parallax {
-            background-image: url('../assets/carousel/w1.jpg');
-            height: 50vh;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-        .parallax::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .parallax-content {
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            transform: translateY(-50%);
-            color: white;
-            text-align: left;
-            z-index: 1;
-        }
-        .parallax-content h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            border-bottom: 5px solid #41CE34;
-        }
-        .parallax-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: justify;
-            font-size: 24px;
-        }
-        .branches-content {
-            padding: 4rem 0;
-            background: #FFFFFF;
-            color: #2c3e50;
-        }
-        .branches-content h2 {
-            color: #41CE34;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .branches-content p {
-            text-align: justify;
-            line-height: 1.6;
-            font-size: 24px;
-            color: #34495e;
-        }
-        .branch-card {
-            background: #FFFFFF;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(65, 206, 52, 0.3);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        }
-        .branch-card h3 {
-            color: #41CE34;
-            margin-bottom: 1rem;
-        }
-        .branch-card p {
-            margin-bottom: 0.5rem;
-            color: #34495e;
-        }
-        .branch-card a {
-            color: #41CE34;
-            text-decoration: none;
-        }
-        .branch-card a:hover {
-            color: #36b32a;
-            text-decoration: underline;
-        }
-        .branch-card i {
-            color: #41CE34;
-            margin-right: 0.5rem;
-        }
-        @media (max-width: 768px) {
-            .parallax {
-                height: 70vh;
-            }
-            .parallax-content {
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-            }
-            .parallax-content h1 {
-                margin-top: 50px;
-                font-size: 2rem;
-            }
-            .parallax-content p {
-                font-size: 1rem;
-            }
-            .branches-content {
-                padding: 2rem 0;
-            }
-            .branches-content h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .branch-card {
-                padding: 1.5rem;
-            }
-        }
-        @media (max-width: 576px) {
-            .parallax-content h1 {
-                margin-top: 30px;
-                font-size: 1.5rem;
-            }
-            .parallax-content p {
-                font-size: 0.9rem;
-                max-width: none;
-            }
-            .branches-content {
-                padding: 1rem 0;
-            }
-            .branches-content h2 {
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
-            }
-            .branch-card {
-                padding: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/branches.css">
 </head>
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="">
+    <section class="parallax" style="background-image: url('../assets/carousel/w1.jpg');">
         <div class="parallax-content">
             <h1>Our Branches</h1>
             <p>Find a Two Wheels Zone branch near you. Visit us for all your motorcycle needs.</p>
@@ -207,6 +62,38 @@
                         <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Emergency repairs, tire services</p>
                     </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="branch-card">
+                        <h3>Roxas Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Roxas, Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="#" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
+                        <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Motorcycle repair, parts, accessories</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="branch-card">
+                        <h3>Taytay Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Taytay, Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="#" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
+                        <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Motorcycle repair, parts, accessories</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="branch-map-copy">
+                        <h3 class="mb-3">See Our Locations</h3>
+                        <p class="mb-3">Find the nearest Two Wheels Zone branch on the map. Each pin marks one of our branches across Palawan, ready to serve your motorcycle needs.</p>
+                        <p class="mb-0 text-muted" style="font-size: 0.95rem;">Tip: Click the branch cards above for exact Google Maps links and details.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="../assets/branches/map.jpg" class="img-fluid branches-map" alt="Philippines map with branch locations">
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
-<section class="franchise-section py-5 mt-3" style="background: #FFFFFF; color: #2c3e50;">
+<link rel="stylesheet" href="../assets/css/franchiseBtn.css">
+<section class="franchise-section py-5 mt-3">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
@@ -14,49 +15,4 @@
             </div>
         </div>
     </div>
-    <style>
-        @media (max-width: 768px) {
-            .franchise-section {
-                padding: 3rem 0;
-            }
-            .franchise-section h2 {
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-            }
-            .franchise-section p {
-                font-size: 1rem;
-                line-height: 1.5;
-            }
-            .franchise-section .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-        @media (max-width: 576px) {
-            .franchise-section {
-                padding: 2rem 0;
-            }
-            .franchise-section h2 {
-                font-size: 1.2rem;
-                margin-bottom: 0.8rem;
-            }
-            .franchise-section p {
-                font-size: 0.9rem !important;
-                line-height: 1.4;
-            }
-            .franchise-section .btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.8rem;
-                width: 100%;
-                margin-top: 1rem;
-            }
-            .franchise-section .row {
-                text-align: center;
-            }
-            .franchise-section .col-md-8,
-            .franchise-section .col-md-4 {
-                margin-bottom: 1.5rem;
-            }
-        }
-    </style>
 </section>

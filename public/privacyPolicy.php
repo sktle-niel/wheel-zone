@@ -7,40 +7,7 @@
     <link rel="shortcut icon" href="../lucent.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        body {
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-        }
-        .content {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #fff;
-            font-family: sans-serif;
-        }
-        .content h1 {
-            color: #41CE34;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-        .content p {
-            text-align: justify;
-            line-height: 1.6;
-        }
-        @media (max-width: 768px) {
-            .content {
-                padding: 2rem 0;
-            }
-            .content h1 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .content p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/privacyPolicy.css">
 </head>
 <body>
     <?php include 'components/navigationBar.php'; ?>

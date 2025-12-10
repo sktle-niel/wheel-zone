@@ -2,19 +2,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: 1px;
-    }
-
-    .nav-link  {
-        font-size: 24px !important;
-    }
-</style>
-<nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); transition: all 0.3s ease; border-bottom: 1px solid rgba(65, 206, 52, 0.2); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+<link rel="stylesheet" href="../assets/css/navigationBar.css">
+<nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="./home.php"><img src="../assets/branding/lucent.png" alt="Moto Brand Logo" height="90"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,121 +30,6 @@
             </ul>
         </div>
     </div>
-    <style>
-        #navbar {
-            background-color: rgba(255, 255, 255, 0.75) !important;
-            backdrop-filter: blur(20px) saturate(180%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-        }
-        .navbar-brand img {
-            height: 90px !important;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        @media (max-width: 767px) {
-            .navbar-toggler {
-                animation: pulse 2s infinite;
-                outline: none !important;
-                transition: transform 0.3s ease;
-            }
-            .navbar-toggler.open {
-                transform: rotate(90deg);
-            }
-            .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2341CE34' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-                transition: transform 0.3s ease;
-            }
-            .navbar-toggler.open .navbar-toggler-icon {
-                transform: rotate(180deg);
-            }
-            .navbar-collapse {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 68%;
-                height: 100vh;
-                background-color: rgba(255, 255, 255, 0.85);
-                backdrop-filter: blur(20px) saturate(180%);
-                -webkit-backdrop-filter: blur(20px) saturate(180%);
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                z-index: 1050;
-                overflow-y: auto;
-                box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
-                border-left: 1px solid rgba(65, 206, 52, 0.2);
-            }
-            .navbar-collapse.show {
-                transform: translateX(0);
-            }
-            .navbar-nav {
-                flex-direction: column;
-                padding-top: 50px;
-            }
-            .nav-item {
-                margin: 10px 0;
-                margin-left: 15px;
-            }
-            .nav-link {
-                border-bottom: 1px solid #41CE34 !important;
-                padding-bottom: 5px;
-            }
-        }
-        @media (max-width: 390px) {
-            .nav-link {
-                font-size: small !important;
-            }
-            .navbar-collapse {
-                width: 85%;
-            }
-            .nav-item {
-                margin-left: 10px;
-            }
-        }
-        @media (max-width: 360px) {
-            .nav-link {
-                font-size: x-small !important;
-            }
-            .navbar-collapse {
-                width: 90%;
-            }
-        }
-        @media (min-width: 768px) {
-            .btn-close {
-                display: none !important;
-            }
-            .container-fluid {
-                display: flex;
-                justify-content: center !important;
-                align-items: center !important;
-            }
-            .navbar-brand {
-                margin-right: 2rem;
-            }
-            .navbar-collapse {
-                flex: none;
-            }
-            .nav-link {
-                position: relative;
-                transition: all 0.3s ease;
-            }
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 4px;
-                background-color: #41CE34;
-                transition: width 0.3s ease;
-            }
-            .nav-link:hover::after {
-                width: 100%;
-            }
-        }
-    </style>
     <script>
         const navbar = document.getElementById('navbar');
         const toggler = document.querySelector('.navbar-toggler');
@@ -180,49 +54,54 @@
 
         // Prevent body scroll when navbar is open on mobile
         const collapseElement = document.getElementById('navbarSupportedContent');
-        let scrollPosition = 0;
         let navbarPlaceholder = null;
+        
         collapseElement.addEventListener('show.bs.collapse', function () {
-            scrollPosition = window.pageYOffset;
-            document.documentElement.style.overflow = 'hidden';
-            document.documentElement.style.position = 'fixed';
-            document.documentElement.style.top = `-${scrollPosition}px`;
-            document.documentElement.style.width = '100%';
-            // Prevent touch scrolling on the body when navbar is open
-            document.body.addEventListener('touchmove', preventBodyScroll, { passive: false });
-            // Make navbar fixed when collapse is open on mobile
             if (window.innerWidth <= 767) {
+                // Simply prevent scrolling with overflow hidden (no fixed positioning)
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'relative';
+                
+                // Prevent touch scrolling on the body when navbar is open
+                document.body.addEventListener('touchmove', preventBodyScroll, { passive: false });
+                
+                // Make navbar fixed when collapse is open on mobile
                 navbar.classList.remove('sticky-top');
                 navbar.style.position = 'fixed';
                 navbar.style.top = '0';
                 navbar.style.left = '0';
                 navbar.style.width = '100%';
                 navbar.style.zIndex = '1051';
+                
                 // Create a placeholder to prevent content shift
                 navbarPlaceholder = document.createElement('div');
                 navbarPlaceholder.style.height = navbar.offsetHeight + 'px';
                 navbar.parentNode.insertBefore(navbarPlaceholder, navbar);
             }
         });
+        
         collapseElement.addEventListener('hide.bs.collapse', function () {
-            document.documentElement.style.overflow = 'auto';
-            document.documentElement.style.position = '';
-            document.documentElement.style.top = '';
-            document.documentElement.style.width = '';
-            window.scrollTo(0, scrollPosition);
-            // Remove the touchmove listener
-            document.body.removeEventListener('touchmove', preventBodyScroll, { passive: false });
-            // Reset navbar position
-            navbar.classList.add('sticky-top');
-            navbar.style.position = '';
-            navbar.style.top = '';
-            navbar.style.left = '';
-            navbar.style.width = '';
-            navbar.style.zIndex = '';
-            // Remove placeholder
-            if (navbarPlaceholder) {
-                navbarPlaceholder.remove();
-                navbarPlaceholder = null;
+            if (window.innerWidth <= 767) {
+                // Remove the touchmove listener first
+                document.body.removeEventListener('touchmove', preventBodyScroll, { passive: false });
+                
+                // Reset navbar position
+                navbar.classList.add('sticky-top');
+                navbar.style.position = '';
+                navbar.style.top = '';
+                navbar.style.left = '';
+                navbar.style.width = '';
+                navbar.style.zIndex = '';
+                
+                // Remove placeholder
+                if (navbarPlaceholder) {
+                    navbarPlaceholder.remove();
+                    navbarPlaceholder = null;
+                }
+                
+                // Simply restore body overflow - no scroll restoration needed
+                document.body.style.overflow = '';
+                document.body.style.position = '';
             }
         });
 
