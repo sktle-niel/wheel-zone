@@ -77,6 +77,13 @@ body {
         border-bottom: 1px solid #41CE34 !important;
         padding-bottom: 5px;
     }
+    .btn-close {
+        filter: brightness(0);
+        opacity: 1;
+    }
+    .btn-close:hover {
+        opacity: 0.75;
+    }
 }
 
 @media (max-width: 390px) {
