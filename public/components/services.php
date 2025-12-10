@@ -7,7 +7,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="bi bi-wrench fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">FI Cleaning</h5>
+                        <h5 class="card-title" style="color: #2c3e50;">FI Cleaning</h5>
                     </div>
                 </div>
             </div>
@@ -162,17 +162,17 @@
     </div>
     <style>
         .services {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #fff;
+            background: #FFFFFF;
+            color: #2c3e50;
         }
         .card {
             min-height: 140px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 50, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.98) 100%);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(65, 206, 52, 0.3);
             border-radius: 15px;
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            color: #2c3e50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Two Wheels Zone</title>
+    <link rel="shortcut icon" href="../lucent.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
         font-weight: 400;
         font-style: normal;
         letter-spacing: 1px;
+        background: #FFFFFF;
     }
 
     </style>
@@ -65,8 +67,8 @@
         }
         .contact-content {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #fff;
+            background: #FFFFFF;
+            color: #2c3e50;
         }
         .contact-content h2 {
             color: #41CE34;
@@ -77,12 +79,14 @@
             text-align: justify;
             line-height: 1.6;
             font-size: 24px;
+            color: #34495e;
         }
         .contact-form, .contact-info {
-            background: rgba(0, 0, 0, 0.8);
+            background: #FFFFFF;
             padding: 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
+            border: 1px solid rgba(65, 206, 52, 0.2);
         }
         .contact-form {
             font-size: 21px;
@@ -97,7 +101,7 @@
             margin-bottom: 1rem;
         }
         .form-group label {
-            color: #fff;
+            color: #2c3e50;
             text-align: left;
         }
         .form-group input, .form-group textarea {
@@ -105,9 +109,17 @@
             padding: 0.5rem;
             border: 1px solid #41CE34;
             border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-                }
+            background: #FFFFFF;
+            color: #2c3e50;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #41CE34;
+            box-shadow: 0 0 0 0.2rem rgba(65, 206, 52, 0.25);
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(44, 62, 80, 0.6);
+        }
         .btn-submit {
             width: 100%;
             padding: 0.75rem;
@@ -124,6 +136,15 @@
         }
         .contact-info p {
             margin-bottom: 0.5rem;
+            color: #34495e;
+        }
+        .contact-info a {
+            color: #41CE34;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            color: #36b32a;
+            text-decoration: underline;
         }
         .contact-info i {
             color: #41CE34;
@@ -210,7 +231,7 @@
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="margin-top: -120px;">
+    <section class="parallax" style="">
         <div class="parallax-content">
             <h1>Contact Us</h1>
             <p>Get in touch with us for all your motorcycle needs. We're here to help you ride better.</p>
@@ -251,7 +272,7 @@
                                 <label for="message" class="text-start">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn-submit">Send Message</button>
+                            <button type="submit" class="btn-submit" style="letter-spacing: 2px !important;">Send Message</button>
                         </form>
                     </div>
                 </div>

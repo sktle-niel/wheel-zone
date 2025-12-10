@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="height: 870px; margin-top: -140px !important;" id="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="height: 870px; margin-top: -100px !important; background-color: #FF8C69;" id="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -39,7 +39,7 @@
         }
         @media (max-width: 767px) {
             #carouselExampleIndicators {
-                height: 500px !important;
+                height: 480px !important;
                 margin-top: 0 !important;
             }
             #carouselExampleIndicators .carousel-item img {
