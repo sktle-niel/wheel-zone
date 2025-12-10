@@ -63,6 +63,38 @@
                         <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Emergency repairs, tire services</p>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="branch-card">
+                        <h3>Roxas Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Roxas, Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="#" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
+                        <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Motorcycle repair, parts, accessories</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="branch-card">
+                        <h3>Taytay Branch</h3>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Taytay, Palawan</p>
+                        <p><i class="bi bi-map"></i> <strong>Google Maps:</strong> <a href="#" target="_blank">View on Google Maps</a></p>
+                        <p><i class="bi bi-facebook"></i> <strong>Facebook:</strong> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Two Wheels Zone</a></p>
+                        <p><i class="bi bi-clock"></i> <strong>Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
+                        <p><i class="bi bi-car-front"></i> <strong>Services:</strong> Motorcycle repair, parts, accessories</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="branch-map-copy">
+                        <h3 class="mb-3">See Our Locations</h3>
+                        <p class="mb-3">Find the nearest Two Wheels Zone branch on the map. Each pin marks one of our branches across Palawan, ready to serve your motorcycle needs.</p>
+                        <p class="mb-0 text-muted" style="font-size: 0.95rem;">Tip: Click the branch cards above for exact Google Maps links and details.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="../assets/branches/map.jpg" class="img-fluid branches-map" alt="Philippines map with branch locations">
+                </div>
             </div>
         </div>
     </section>

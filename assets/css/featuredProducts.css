@@ -1,0 +1,29 @@
+/* Minimal featured products grid */
+.featured-products {
+    background: #f8fbff;
+}
+
+.featured-products .card {
+    border: 1px solid #e5eaf0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.featured-products .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.featured-products .product-thumb {
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #e5eaf0;
+}
+
+.featured-products .card-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+}
+
