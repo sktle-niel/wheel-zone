@@ -1,0 +1,56 @@
+/* Footer Styles */
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+footer img[alt="Two Wheels Zone Logo"] {
+    height: 80px;
+}
+
+footer .d-flex img {
+    height: 35px;
+}
+
+footer .bi-facebook {
+    font-size: 1.3rem;
+}
+
+footer h6 {
+    font-size: 24px !important;
+    margin-bottom: 1rem;
+}
+
+footer p, footer li {
+    font-size: 19px !important;
+}
+
+footer a:hover {
+    color: #ccc !important;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .col-lg-3, .col-md-6 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .d-flex {
+        justify-content: center;
+    }
+    footer h6 {
+        font-size: 0.9rem;
+    }
+    footer p, footer li {
+        font-size: 0.8rem;
+    }
+}
+

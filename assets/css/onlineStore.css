@@ -1,0 +1,62 @@
+/* Online Store Section Styles */
+
+.online-store {
+    background: #FFFFFF;
+    color: #2c3e50;
+    position: relative;
+}
+
+.store-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    border: 2px solid rgba(65, 206, 52, 0.3);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.store-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(65, 206, 52, 0.3);
+    border-color: #36b32a;
+}
+
+.store-card .btn:hover {
+    background-color: #36b32a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.store-card .store-icon img {
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.store-card:hover .store-icon img {
+    filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+    .online-store h2 {
+        font-size: 2.5rem;
+    }
+    .store-card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .online-store h2 {
+        font-size: 2rem;
+    }
+    .store-card h3 {
+        font-size: 24px;
+    }
+    .store-card p {
+        font-size: 16px;
+    }
+    .store-card .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+

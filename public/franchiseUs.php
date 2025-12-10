@@ -10,154 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-    body {
-        font-family: "Anton", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: 1px;
-        background: #FFFFFF;
-    }
-
-    .parallax {
-        background-image: url('../assets/about/about.jpg');
-        height: 50vh;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
-    .parallax::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-    }
-    .parallax-content {
-        position: absolute;
-        top: 50%;
-        left: 10%;
-        transform: translateY(-50%);
-        color: white;
-        text-align: left;
-        z-index: 1;
-    }
-    .parallax-content h1 {
-        font-size: 3rem;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        border-left: 5px solid #41CE34;
-        padding-left: 1rem;
-
-    }
-    .franchise-form {
-        padding: 4rem 0;
-        background: #FFFFFF;
-        color: #2c3e50;
-        font-size: 21px;
-
-    }
-    .franchise-form h2 {
-        color: #41CE34;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-        text-align: center;
-        
-    }
-    .form-label {
-        color: #2c3e50;
-    }
-    .form-control {
-        background-color: #FFFFFF;
-        border: 1px solid #41CE34;
-        color: #2c3e50 !important;
-        font-size: 19px;
-    }
-    select.form-control {
-        background-color: #FFFFFF;
-        font-size: 19px;
-    }
-    .form-control option {
-        background-color: #FFFFFF;
-        color: #2c3e50;
-    }
-    .form-control::placeholder {
-        color: rgba(44, 62, 80, 0.6) !important;
-    }
-    .form-control:focus {
-        background-color: #FFFFFF;
-        border-color: #41CE34;
-        box-shadow: 0 0 0 0.2rem rgba(65, 206, 52, 0.25);
-        color: #2c3e50 !important;
-    }
-    .btn-submit {
-        background-color: #41CE34;
-        border: none;
-        color: #000;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 0.75rem 2rem;
-        transition: all 0.3s ease;
-        font-size: 24px;
-    }
-    .btn-submit:hover {
-        background-color: #36b32a;
-        transform: translateY(-2px);
-    }
-    @media (max-width: 768px) {
-        .parallax {
-            height: 70vh;
-        }
-        .parallax-content h1 {
-            margin-top: 50px;
-            font-size: 2rem;
-        }
-        .franchise-form {
-            padding: 2rem 0;
-        }
-        .franchise-form h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-    }
-    @media (max-width: 576px) {
-        .parallax-content {
-            left: 5%;
-        }
-        .parallax-content h1 {
-            font-size: 1.5rem;
-            border-left: 3px solid #41CE34;
-            padding-left: 0.5rem;
-        }
-        .form-label {
-            text-align: left !important;
-            display: block !important;
-        }
-        .form-control {
-            text-align: left !important;
-        }
-        .franchise-form {
-            padding: 1rem 0;
-        }
-        .franchise-form h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        .row {
-            justify-content-start !important;
-        }
-    }
-    </style>
+    <link rel="stylesheet" href="../assets/css/franchiseUs.css">
 </head>
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="">
+    <section class="parallax" style="background-image: url('../assets/about/about.jpg');">
         <div class="parallax-content">
             <h1>Get in Touch</h1>
         </div>
@@ -182,8 +40,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="mobile" class="form-label">Mobile Number</label>
                                 <div class="input-group">
-                                    <span class="input-group-text" style="font-family: Arial, sans-serif; background-color: #FFFFFF; border: 1px solid #41CE34; color: #2c3e50; font-family: "Anton", sans-serif;
-">+63</span>
+                                    <span class="input-group-text">+63</span>
                                     <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="9123456789" title="Please enter exactly 10 digits (e.g., 9123456789)" required>
                                 </div>
                             </div>
@@ -212,7 +69,7 @@
                             <textarea class="form-control" id="message" name="message" rows="4"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-submit" style="letter-spacing: 2px !important;">Submit Inquiry</button>
+                            <button type="submit" class="btn btn-submit">Submit Inquiry</button>
                         </div>
                     </form>
                 </div>

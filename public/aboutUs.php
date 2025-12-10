@@ -10,117 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-
-
-    <style>
-    body {
-        font-family: "Anton", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        background: #FFFFFF;
-    }
-
-    </style>
-
-    <style>
-        .parallax {
-            background-image: url('../assets/about/about.jpg');
-            height: 50vh;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-        .parallax.parallax-2 {
-            background-image: url('../assets/about/shop.jpg');
-        }
-        .parallax::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .parallax-content {
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            transform: translateY(-50%);
-            color: white;
-            text-align: left;
-            z-index: 1;
-        }
-        .parallax-content h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            border-bottom: 5px solid #41CE34;
-        }
-        .parallax-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: justify;
-        }
-        .about-content {
-            padding: 4rem 0;
-            background: #FFFFFF;
-            color: #2c3e50;
-        }
-        .about-content h2 {
-            color: #41CE34;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-        .about-content p {
-            text-align: justify;
-            line-height: 1.6;
-            font-size: 24px;
-            color: #34495e;
-        }
-        @media (max-width: 768px) {
-            .parallax {
-                height: 70vh;
-            }
-            .parallax-content {
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-            }
-            .parallax-content h1 {
-                margin-top: 50px;
-                font-size: 2rem;
-            }
-            .parallax-content p {
-                font-size: 1rem;
-            }
-            .about-content {
-                padding: 2rem 0;
-            }
-            .about-content h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .about-content p {
-                font-size: 24px;
-                line-height: 1.5;
-            }
-            .row.mt-5 .col-md-6 {
-                margin-bottom: 2rem;
-            }
-            .row.mt-5 .col-md-6:last-child {
-                margin-bottom: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/aboutUs.css">
 </head>
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="margin-top: 0px;">
+    <section class="parallax" style="margin-top: 0px; background-image: url('../assets/about/about.jpg');">
         <div class="parallax-content">
             <h1>About Two Wheels Zone</h1>
         </div>
@@ -144,19 +39,19 @@
                 <div class="col-md-6">
                     <h2 class="text-left">Our Advantages</h2>
                     <ul class="list-unstyled text-left">
-                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Expert technicians with years of experience</li>
-                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Genuine parts from trusted manufacturers</li>
-                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Fast and reliable service</li>
-                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Competitive pricing</li>
-                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Comprehensive warranty on all work</li>
-                        <li style="color: #34495e;"><i class="bi bi-check-circle-fill text-success me-2"></i>Convenient location and flexible hours</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Expert technicians with years of experience</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genuine parts from trusted manufacturers</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Fast and reliable service</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Competitive pricing</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Comprehensive warranty on all work</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Convenient location and flexible hours</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="parallax parallax-2">
+    <section class="parallax parallax-2" style="background-image: url('../assets/about/shop.jpg');">
         <div class="parallax-content">
             <h1>Experience Excellence</h1>
             <p>Where passion meets precision in motorcycle care</p>
