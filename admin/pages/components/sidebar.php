@@ -40,7 +40,7 @@
             </a>
         </li>
         <li>
-            <a href="featured-products.php" class="nav-link">
+            <a href="featuredProducts.php" class="nav-link">
                 <i class="bi bi-star me-2"></i> Featured Products
             </a>
         </li>

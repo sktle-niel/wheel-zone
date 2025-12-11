@@ -1,5 +1,5 @@
 <?php
-// Admin carousel management page: add/delete images for homepage carousel.
+// Admin featured products management page.
 session_start();
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel Manager - Two Wheels Zone Admin</title>
+    <title>Featured Products - Two Wheels Zone Admin</title>
     <link rel="shortcut icon" href="../../assets/branding/lucent.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,21 @@ session_start();
         .main-content { min-height: 100vh; overflow-y: auto; }
         .panel {
             background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
         }
         .panel h5 { font-weight: 600; }
-        .muted { color: #64748b; }
-        .btn-outline-secondary, .btn-outline-danger { border-color: #e2e8f0; }
+        .muted { color: #6b7280; }
+        .btn-outline-secondary, .btn-outline-danger {
+            border-color: #e5e7eb;
+            color: #111827;
+            padding: 0.4rem 0.7rem;
+            line-height: 1.1;
+        }
+        .btn-outline-danger { color: #b91c1c; }
+        .btn-compact { padding: 0.45rem 0.8rem; line-height: 1.1; }
         .card-grid .item {
-            border: 1px solid #e2e8f0;
+            border: 1px solid #e5e7eb;
             border-radius: 10px;
             padding: 10px;
         }
@@ -41,24 +48,32 @@ session_start();
                 <?php include 'components/sidebar.php'; ?>
             </aside>
             <main class="main-content col-12 col-md-9 col-lg-10 px-4 py-4">
-                <div class="panel p-4 mb-4">
+                <div class="panel p-3 mb-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="text-success fs-4"><i class="bi bi-upload"></i></span>
+                        <span class="text-success fs-4"><i class="bi bi-box-seam"></i></span>
                         <div>
-                            <h1 class="h5 mb-0">Upload New Banner Image</h1>
-                            <small class="muted">Add a new image to the homepage carousel.</small>
+                            <h1 class="h5 mb-0">Add Featured Product</h1>
+                            <small class="muted">Upload an image and set product details.</small>
                         </div>
                     </div>
                     <form method="POST" action="#" enctype="multipart/form-data">
-                        <div class="row g-3 align-items-center">
+                        <div class="row g-2">
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label" for="fpName">Product Name</label>
+                                <input type="text" class="form-control" id="fpName" name="name" placeholder="Product name" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label" for="fpOrder">Order</label>
+                                <input type="number" class="form-control" id="fpOrder" name="order" min="1" value="1" required>
+                            </div>
                             <div class="col-12 col-lg-9">
-                                <label class="form-label" for="carouselImage">Select Banner Image</label>
-                                <input type="file" class="form-control form-control-lg" id="carouselImage" name="image" accept="image/*" required>
+                                <label class="form-label" for="fpImage">Product Image</label>
+                                <input type="file" class="form-control" id="fpImage" name="image" accept="image/*" required>
                                 <small class="muted d-block mt-2">Supported: JPEG, JPG, PNG. Max size: 5MB.</small>
                             </div>
-                            <div class="col-12 col-lg-3 d-grid mt-3 mt-lg-4">
-                                <button type="submit" class="btn btn-success btn-lg">
-                                    <i class="bi bi-upload me-2"></i>Upload Banner
+                            <div class="col-12 col-lg-3 d-grid mt-2">
+                                <button type="submit" class="btn btn-success btn-compact" style="height: 70px;">
+                                    <i class="bi bi-upload me-2"></i>Add Product
                                 </button>
                             </div>
                         </div>
@@ -67,33 +82,33 @@ session_start();
 
                 <?php
                 // Placeholder data; replace with DB/storage results.
-                $carouselItems = [
-                    ['id' => 1, 'title' => 'Workshop', 'image' => '../../assets/carousel/w1.jpg', 'order' => 1],
-                    ['id' => 2, 'title' => 'Workshop 1', 'image' => '../../assets/carousel/w2.jpg', 'order' => 2],
-                    ['id' => 3, 'title' => 'Workshop 3', 'image' => '../../assets/carousel/w3.jpg', 'order' => 3],
+                $featuredProducts = [
+                    ['id' => 1, 'name' => 'Name of Product', 'image' => '../../assets/featured/1.jpg', 'order' => 1],
+                    ['id' => 2, 'name' => 'Name of Product', 'image' => '../../assets/featured/2.jpg', 'order' => 2],
+                    ['id' => 3, 'name' => 'Name of Product', 'image' => '../../assets/featured/3.jpg', 'order' => 3],
                 ];
                 ?>
-                <div class="panel p-4">
+                <div class="panel p-3">
                     <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
                         <div class="d-flex align-items-center gap-2">
                             <span class="text-primary fs-5"><i class="bi bi-grid-3x3-gap"></i></span>
-                            <h2 class="h6 mb-0">Current Banners</h2>
+                            <h2 class="h6 mb-0">Current Featured Products</h2>
                         </div>
-                        <span class="badge text-bg-dark px-3 py-2"><?php echo count($carouselItems); ?></span>
+                        <span class="badge text-bg-dark px-3 py-2"><?php echo count($featuredProducts); ?></span>
                     </div>
-                    <?php if (empty($carouselItems)): ?>
-                        <div class="text-center text-muted py-4">No banners yet.</div>
+                    <?php if (empty($featuredProducts)): ?>
+                        <div class="text-center text-muted py-4">No featured products yet.</div>
                     <?php else: ?>
                         <div class="row g-3 card-grid">
-                            <?php foreach ($carouselItems as $item): ?>
+                            <?php foreach ($featuredProducts as $product): ?>
                                 <div class="col-sm-6 col-lg-4">
                                     <div class="item h-100 d-flex flex-column">
-                                        <div class="ratio ratio-16x9 mb-2 overflow-hidden" style="background:#f8fafc;">
-                                            <img src="<?php echo htmlspecialchars($item['image']); ?>" alt="<?php echo htmlspecialchars($item['title']); ?>" class="w-100 h-100" style="object-fit: cover;">
+                                        <div class="ratio ratio-1x1 mb-2 overflow-hidden" style="background:#f8fafc;">
+                                            <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="w-100 h-100" style="object-fit: cover;">
                                         </div>
                                         <div class="flex-grow-1">
-                                            <div class="fw-semibold mb-1"><?php echo htmlspecialchars($item['title'] ?: 'Untitled'); ?></div>
-                                            <div class="muted small">Order: <?php echo (int) $item['order']; ?></div>
+                                            <div class="fw-semibold mb-1"><?php echo htmlspecialchars($product['name'] ?: 'Untitled'); ?></div>
+                                            <div class="muted small">Order: <?php echo (int) $product['order']; ?></div>
                                         </div>
                                         <div class="mt-3 d-flex gap-2">
                                             <button type="button" class="btn btn-outline-secondary btn-sm w-100">Edit</button>
