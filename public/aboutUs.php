@@ -33,7 +33,7 @@
             <div class="row mt-5" >
                 <div class="col-md-6">
                     <h2>Our History</h2>
-                    <p>Founded in 2015, Two Wheels Zone started as a small workshop with a vision to revolutionize motorcycle servicing in the Philippines. What began as a passion project by a group of motorcycle enthusiasts has grown into a trusted name in the industry.</p>
+                    <p>Founded in 2021, Two Wheels Zone started as a small workshop with a vision to revolutionize motorcycle servicing in the Philippines. What began as a passion project by a group of motorcycle enthusiasts has grown into a trusted name in the industry.</p>
                     <p>Over the years, we've expanded our services, partnered with leading brands, and built a reputation for excellence. Our commitment to quality and customer satisfaction has driven our growth from a local shop to a comprehensive motorcycle service center.</p>
                 </div>
                 <div class="col-md-6">
