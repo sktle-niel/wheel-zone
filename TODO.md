@@ -1,5 +1,7 @@
-# TODO for Franchise Form Email Submission
-
-- [x] Create sendFranchiseMessage.php script adapted from sendMessage.php for franchise form fields
-- [ ] Edit public/franchiseUs.php to update form action to "../sendFranchiseMessage.php" and add success message handling
-- [ ] Test the form submission to ensure email is sent correctly
+- [x] Update body background to #f8fafc
+- [x] Update panel styles with shadows and border-radius
+- [x] Add hero section with gradient background
+- [x] Update button styles with gradients (btn-upload-product)
+- [x] Update card grid with hover effects
+- [x] Update muted colors and other styles to match carousel.php
+- [x] Add delete functionality to branches page (modal, JavaScript, backend integration)
