@@ -47,7 +47,7 @@
         </div>
         <hr class="my-4">
         <div class="text-center">
-            <p>&copy; 2023 Two Wheels Zone. All rights reserved.</p>
+            <p>&copy; 2021 Two Wheels Zone. All rights reserved.</p>
         </div>
     </div>
 </footer>
