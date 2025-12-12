@@ -46,9 +46,9 @@ if ($status === 'success') {
 
 $featuredProducts = [];
 
-$sql = 'SELECT id, name, image_path, display_order
+$sql = 'SELECT id, name, image_path
         FROM featured_products
-        ORDER BY display_order ASC, id DESC';
+        ORDER BY id DESC';
 
 $result = $conn->query($sql);
 
@@ -59,7 +59,6 @@ if ($result) {
             'name' => $row['name'],
             // Prepend ../../ so admin view resolves correctly
             'image' => '../../' . ltrim($row['image_path'], '/'),
-            'order' => (int) $row['display_order'],
         ];
     }
     $result->free();
@@ -121,16 +120,6 @@ $conn->close();
             box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
         }
         .card-grid img { border-radius: 10px; }
-        .order-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #fff;
-            border-radius: 999px;
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: 600;
-        }
         .thumb-wrap {
             position: relative;
             border-radius: 10px;
@@ -206,16 +195,12 @@ $conn->close();
                                 <label class="form-label" for="fpName">Product Name</label>
                                 <input type="text" class="form-control form-control-lg" id="fpName" name="name" placeholder="Product name" required>
                             </div>
-                            <div class="col-12 col-lg-3">
-                                <label class="form-label" for="fpOrder">Order</label>
-                                <input type="number" class="form-control form-control-lg" id="fpOrder" name="order" min="1" value="1" required>
-                            </div>
-                            <div class="col-12 col-lg-9">
+                            <div class="col-12 col-lg-6">
                                 <label class="form-label" for="fpImage">Product Image</label>
                                 <input type="file" class="form-control form-control-lg" id="fpImage" name="image" accept="image/*" required>
                                 <small class="muted d-block mt-2">Supported: JPEG, JPG, PNG. Max size: 5MB.</small>
                             </div>
-                            <div class="col-12 col-lg-3 d-grid mt-3 mt-lg-4">
+                            <div class="col-12 col-lg-6 d-grid mt-3 mt-lg-4">
                                 <button type="submit" class="btn btn-upload-product btn-lg">
                                     <i class="bi bi-upload me-2"></i>Add Product
                                 </button>
@@ -230,7 +215,7 @@ $conn->close();
                             <span class="text-primary fs-5"><i class="bi bi-grid-3x3-gap"></i></span>
                             <div>
                                 <h2 class="h6 mb-0">Current Featured Products</h2>
-                                <small>Sorted by display order</small>
+                                <small>Sorted by ID</small>
                             </div>
                         </div>
                         <span class="badge text-bg-dark px-3 py-2"><?php echo count($featuredProducts); ?></span>
@@ -244,7 +229,6 @@ $conn->close();
                                     <div class="item h-100 d-flex flex-column">
                                         <div class="ratio ratio-1x1 mb-2 thumb-wrap" style="background:#f8fafc;">
                                             <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="w-100 h-100" style="object-fit: cover;">
-                                            <span class="order-badge">Order #<?php echo (int) $product['order']; ?></span>
                                         </div>
                                         <div class="flex-grow-1">
                                             <div class="fw-semibold mb-1"><?php echo htmlspecialchars($product['name'] ?: 'Untitled'); ?></div>

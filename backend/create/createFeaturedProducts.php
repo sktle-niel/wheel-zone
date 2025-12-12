@@ -9,9 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $name = trim($_POST['name'] ?? '');
-$displayOrder = (int) ($_POST['order'] ?? 0);
 
-if ($name === '' || $displayOrder < 1 || !isset($_FILES['image'])) {
+if ($name === '' || !isset($_FILES['image'])) {
     header('Location: ../../admin/pages/featuredProducts.php?status=invalid');
     exit;
 }
@@ -53,15 +52,15 @@ if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
 }
 
 $stmt = $conn->prepare(
-    'INSERT INTO featured_products (name, image_path, display_order)
-     VALUES (?, ?, ?)'
+    'INSERT INTO featured_products (name, image_path)
+     VALUES (?, ?)'
 );
 if (!$stmt) {
     header('Location: ../../admin/pages/featuredProducts.php?status=db_prepare_error');
     exit;
 }
 
-$stmt->bind_param('ssi', $name, $relativePath, $displayOrder);
+$stmt->bind_param('ss', $name, $relativePath);
 $ok = $stmt->execute();
 $stmt->close();
 $conn->close();

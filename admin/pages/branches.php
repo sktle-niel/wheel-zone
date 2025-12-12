@@ -237,7 +237,6 @@ if ($status === 'success') {
                     </form>
                 </div>
 
-
                 <div class="panel p-3">
                     <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
                         <div class="d-flex align-items-center gap-2">

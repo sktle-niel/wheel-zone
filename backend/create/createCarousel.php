@@ -9,9 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $title = trim($_POST['title'] ?? '');
-$displayOrder = (int) ($_POST['display_order'] ?? 0);
 
-if ($title === '' || $displayOrder < 1 || !isset($_FILES['image'])) {
+if ($title === '' || !isset($_FILES['image'])) {
     header('Location: ../../admin/pages/carousel.php?status=invalid');
     exit;
 }
@@ -53,8 +52,8 @@ if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
 }
 
 $stmt = $conn->prepare(
-    'INSERT INTO carousel_items (title, image_path, display_order, created_at, updated_at)
-     VALUES (?, ?, ?, NOW(), NOW())'
+    'INSERT INTO carousel_items (title, image_path, created_at, updated_at)
+     VALUES (?, ?, NOW(), NOW())'
 );
 
 if (!$stmt) {
@@ -62,7 +61,7 @@ if (!$stmt) {
     exit;
 }
 
-$stmt->bind_param('ssi', $title, $relativePath, $displayOrder);
+$stmt->bind_param('ss', $title, $relativePath);
 $ok = $stmt->execute();
 $stmt->close();
 $conn->close();

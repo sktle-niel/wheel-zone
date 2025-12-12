@@ -223,7 +223,7 @@ $conn->close();
                             <span class="text-primary fs-5"><i class="bi bi-grid-3x3-gap"></i></span>
                             <div>
                                 <h2 class="h6 mb-0">Current Banners</h2>
-                                <small>Sorted by display order</small>
+                                <small>Sorted by newest first</small>
                             </div>
                         </div>
                         <span class="badge text-bg-dark px-3 py-2"><?php echo count($carouselItems); ?></span>
@@ -334,4 +334,3 @@ $conn->close();
     </script>
 </body>
 </html>
-
