@@ -20,7 +20,7 @@ if ($result) {
     $result->free();
 }
 
-$conn->close();
+
 ?>
 
 <link rel="stylesheet" href="../assets/css/featuredProducts.css">
