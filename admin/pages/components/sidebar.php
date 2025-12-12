@@ -49,6 +49,11 @@
                 <i class="bi bi-geo-alt me-2"></i> Branches
             </a>
         </li>
+        <li>
+            <a href="shopLinks.php" class="nav-link">
+                <i class="bi bi-link me-2"></i> Shop Links
+            </a>
+        </li>
     </ul>
     <hr class="text-secondary">
     <div>
