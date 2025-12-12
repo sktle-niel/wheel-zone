@@ -1,10 +1,31 @@
 /* Minimal featured products grid */
 .featured-products {
     background: #f8fbff;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/about/shop.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.featured-products .container {
+    position: relative;
+    z-index: 1;
 }
 
 .featured-products .card {
     border: 1px solid #e5eaf0;
+    border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }

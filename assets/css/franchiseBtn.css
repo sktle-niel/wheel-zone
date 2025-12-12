@@ -1,8 +1,51 @@
-/* Franchise Button Section Styles */
-
 .franchise-section {
-    background: #FFFFFF;
-    color: #2c3e50;
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
+    color: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.franchise-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.franchise-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.franchise-section h2 {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.franchise-section p {
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.franchise-section .btn {
+    background-color: #FFD23F !important;
+    color: #000 !important;
+    border: 2px solid #FFFFFF !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.franchise-section .btn:hover {
+    background-color: #FFFFFF !important;
+    color: #FF6B35 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {

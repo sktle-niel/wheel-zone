@@ -25,7 +25,7 @@ if ($result) {
 
 <link rel="stylesheet" href="../assets/css/featuredProducts.css">
 
-<section class="featured-products py-5">
+<section class="featured-products py-5" style="margin-top: -50px;">
     <div class="container">
         <h2 class="text-center mb-4" style="color: #2c3e50; text-transform: uppercase;">Featured Products</h2>
         <div class="row g-3 g-md-4">
@@ -46,3 +46,4 @@ if ($result) {
         </div>
     </div>
 </section>
+

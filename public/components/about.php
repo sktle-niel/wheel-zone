@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../assets/css/about.css">
-<section class="about py-5">
+<section class="about py-5" style="background: linear-gradient(135deg, #41CE34 0%, #FF0000 100%); margin-top: -32px;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
@@ -83,4 +83,5 @@
         });
     </script>
 </section>
+
 

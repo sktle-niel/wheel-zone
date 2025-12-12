@@ -32,6 +32,8 @@ $conn->close();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/branches.css">
 </head>
+
+
 <body>
     <?php include 'components/navigationBar.php'; ?>
 

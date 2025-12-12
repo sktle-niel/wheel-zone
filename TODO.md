@@ -1,12 +1,6 @@
-- [ ] Edit admin/pages/carousel.php: Update SQL query to remove display_order, change ORDER BY to id DESC
-- [ ] Edit admin/pages/carousel.php: Remove display_order input from the upload form
-- [ ] Edit admin/pages/carousel.php: Remove order badge from item display
-- [ ] Edit admin/pages/carousel.php: Update hero description to remove "reorder"
-- [ ] Edit backend/create/createCarousel.php: Remove display_order variable and validation
-- [ ] Edit backend/create/createCarousel.php: Update INSERT statement to exclude display_order
-- [x] Include the database connection at the top of 'public/branches.php'.
-- [x] Execute the SQL query and fetch the results in 'public/branches.php'.
-- [x] Replace the hardcoded branch cards in 'public/branches.php' with a PHP loop that generates the cards dynamically.
-- [x] Structure the output in 'public/branches.php' to match the current layout: use <div class="row"> wrapping every two <div class="col-md-6"> for branches.
-- [x] Keep the map section at the end of 'public/branches.php' unchanged.
-- [x] Ensure proper error handling if the query fails in 'public/branches.php'.
+# TODO: Change Color Scheme to Black and Yellow Gradient
+
+- [x] Update assets/css/about.css: Change background to black-yellow gradient, adjust text colors for contrast, keep yellow accents
+- [x] Update assets/css/services.css: Change background to black-yellow gradient, adjust text colors for contrast, keep yellow accents
+- [x] Update inline styles in public/components/about.php: Change green (#41CE34) to yellow
+- [x] Update inline styles in public/components/services.php: Change green (#41CE34) to yellow
