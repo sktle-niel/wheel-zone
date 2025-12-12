@@ -56,7 +56,6 @@
     <?php include 'components/carousel.php'; ?>
     <?php include 'components/franchiseBtn.php'; ?>
     <?php include 'components/about.php'; ?>
-    <?php include 'components/services.php'; ?>
     <?php include 'components/featuredProducts.php'; ?>
     <?php include 'components/onlineStore.php'; ?>
     <?php include 'components/footer.php'; ?>
