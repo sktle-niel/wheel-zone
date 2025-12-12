@@ -1,6 +1,47 @@
 <?php
 // Admin branches management page.
 session_start();
+
+$status = $_GET['status'] ?? '';
+$modal = null;
+
+if ($status === 'success') {
+    $modal = [
+        'title' => 'Success',
+        'body' => 'Branch added successfully.',
+        'type' => 'success',
+    ];
+} elseif ($status === 'update_success') {
+    $modal = [
+        'title' => 'Success',
+        'body' => 'Branch updated successfully.',
+        'type' => 'success',
+    ];
+} elseif ($status === 'delete_success') {
+    $modal = [
+        'title' => 'Success',
+        'body' => 'Branch deleted successfully.',
+        'type' => 'success',
+    ];
+} elseif ($status === 'invalid') {
+    $modal = [
+        'title' => 'Error',
+        'body' => 'Invalid input data. Please check your entries.',
+        'type' => 'danger',
+    ];
+} elseif (in_array($status, ['delete_invalid', 'delete_not_found', 'delete_db_error'], true)) {
+    $modal = [
+        'title' => 'Error',
+        'body' => 'Delete failed. Please try again.',
+        'type' => 'danger',
+    ];
+} elseif (in_array($status, ['upload_error', 'type_error', 'size_error', 'path_error', 'save_error', 'db_prepare_error', 'db_error', 'update_error'], true)) {
+    $modal = [
+        'title' => 'Error',
+        'body' => 'Failed to process branch. Please try again.',
+        'type' => 'danger',
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,27 +56,83 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { background: #ffffff; min-height: 100vh; color: #0f172a; }
+        body { background: #f8fafc; min-height: 100vh; color: #0f172a; }
         .sidebar { min-height: 100vh; position: sticky; top: 0; }
         .main-content { min-height: 100vh; overflow-y: auto; }
         .panel {
             background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
         }
-        .muted { color: #6b7280; }
-        .btn-outline-secondary, .btn-outline-danger {
-            border-color: #e5e7eb;
-            color: #111827;
-            padding: 0.4rem 0.7rem;
-            line-height: 1.1;
+        .panel h5 { font-weight: 600; }
+        .muted { color: #64748b; }
+        .btn-outline-secondary, .btn-outline-danger { border-color: #e2e8f0; }
+        .hero {
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            color: #fff;
+            border-radius: 14px;
+            padding: 22px 24px;
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
         }
-        .btn-outline-danger { color: #b91c1c; }
-        .btn-compact { padding: 0.45rem 0.8rem; line-height: 1.1; }
+        .stat-chip {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
         .card-grid .item {
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+        }
+        .card-grid .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+        }
+        .section-header small {
+            color: #94a3b8;
+        }
+        .btn-upload-banner {
+            background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
+            border: none;
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(14, 165, 233, 0.25);
+        }
+        .btn-upload-banner:hover {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: #fff;
+            box-shadow: 0 12px 26px rgba(2, 132, 199, 0.3);
+        }
+        .btn-edit-branch {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-color: #d97706;
+            color: #fff;
+            box-shadow: 0 8px 18px rgba(217, 119, 6, 0.25);
+        }
+        .btn-edit-branch:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            border-color: #b45309;
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(180, 83, 9, 0.3);
+        }
+        .btn-delete-branch {
+            background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+            border-color: #7c3aed;
+            color: #fff;
+            box-shadow: 0 8px 18px rgba(124, 58, 237, 0.25);
+        }
+        .btn-delete-branch:hover {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            border-color: #6d28d9;
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(109, 40, 217, 0.3);
         }
     </style>
 </head>
@@ -46,7 +143,57 @@ session_start();
                 <?php include 'components/sidebar.php'; ?>
             </aside>
             <main class="main-content col-12 col-md-9 col-lg-10 px-4 py-4">
-                <div class="panel p-3 mb-3">
+                <?php
+                // Fetch branches from database
+                $branches = [];
+                require_once '../../connection/connection.php';
+
+                $sql = 'SELECT id, name, address, maps, facebook, hours, services, created_at, updated_at
+                        FROM branches
+                        ORDER BY id DESC';
+
+                $result = $conn->query($sql);
+
+                if ($result) {
+                    while ($row = $result->fetch_assoc()) {
+                        $branches[] = [
+                            'id' => (int) $row['id'],
+                            'name' => $row['name'],
+                            'address' => $row['address'],
+                            'maps' => $row['maps'],
+                            'facebook' => $row['facebook'],
+                            'hours' => $row['hours'],
+                            'services' => $row['services'],
+                            'created_at' => $row['created_at'],
+                            'updated_at' => $row['updated_at'],
+                        ];
+                    }
+                    $result->free();
+                }
+
+                $conn->close();
+                ?>
+                <div class="hero mb-4 d-flex align-items-start justify-content-between gap-3 flex-wrap">
+                    <div>
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <span class="fs-4"><i class="bi bi-geo-alt"></i></span>
+                            <h1 class="h5 mb-0 text-white">Branches Manager</h1>
+                        </div>
+                        <p class="mb-0">Manage your branch locations.</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <span class="stat-chip"><i class="bi bi-geo-alt-fill"></i><?php echo count($branches); ?> branches</span>
+                    </div>
+                </div>
+
+                <?php if ($modal): ?>
+                    <div class="alert alert-<?php echo htmlspecialchars($modal['type']); ?> alert-dismissible fade show mb-4" role="alert">
+                        <strong><?php echo htmlspecialchars($modal['title']); ?>:</strong> <?php echo htmlspecialchars($modal['body']); ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+
+                <div class="panel p-4 mb-4">
                     <div class="d-flex align-items-center gap-2 mb-3">
                         <span class="text-success fs-4"><i class="bi bi-geo-alt"></i></span>
                         <div>
@@ -54,7 +201,7 @@ session_start();
                             <small class="muted">Enter branch details shown on the public branches page.</small>
                         </div>
                     </div>
-                    <form method="POST" action="#" enctype="multipart/form-data">
+                    <form method="POST" action="../../backend/create/createBranch.php" enctype="multipart/form-data">
                         <div class="row g-2">
                             <div class="col-md-6">
                                 <label class="form-label" for="branchName">Branch Name</label>
@@ -80,16 +227,9 @@ session_start();
                                 <label class="form-label" for="branchServices">Services</label>
                                 <textarea class="form-control" id="branchServices" name="services" rows="2" placeholder="Full motorcycle repair, parts, accessories"></textarea>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label" for="branchOrder">Order</label>
-                                <input type="number" class="form-control" id="branchOrder" name="order" min="1" value="1">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label" for="branchImage">Branch Image (optional)</label>
-                                <input type="file" class="form-control" id="branchImage" name="image" accept="image/*">
-                            </div>
+
                             <div class="col-12 col-lg-3 d-grid mt-2">
-                                <button type="submit" class="btn btn-success btn-compact">
+                                <button type="submit" class="btn btn-upload-banner btn-compact">
                                     <i class="bi bi-upload me-2"></i>Add Branch
                                 </button>
                             </div>
@@ -97,56 +237,6 @@ session_start();
                     </form>
                 </div>
 
-                <?php
-                // Placeholder data; replace with DB/storage results.
-                $branches = [
-                    [
-                        'name' => 'Sicsican Branch',
-                        'address' => 'QPW8+5JF, Puerto Princesa South Road, Puerto Princesa City, Palawan',
-                        'maps' => 'https://www.google.com/maps/place/Two+Wheels+Zone/@9.7714938,118.7093693,14z/data=!4m10!1m2!2m1!1sTwo+Wheels+Zone+sicsican!3m6!1s0x33b562e0f9f3c525:0x6871ef1f501af47!8m2!3d9.7954403!4d118.7165457!15sChhUd28gV2hlZWxzIFpvbmUgc2ljc2ljYW6SARBhdXRvX3BhcnRzX3N0b3Jl4AEA!16s%2Fg%2F11xrw4l_sq?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D',
-                        'facebook' => 'https://web.facebook.com/TwoWheelsZone',
-                        'hours' => 'Mon-Sat: 7:00AM-9:00PM',
-                        'services' => 'Full motorcycle repair, parts, accessories',
-                        'order' => 1,
-                    ],
-                    [
-                        'name' => 'Malvar Road Branch',
-                        'address' => '329 Malvar Road, Puerto Princesa City, 5300 Palawan',
-                        'maps' => 'https://www.google.com/maps/place/Two+Wheels+Zone/@9.7474692,118.7408171,17z/data=!3m1!4b1!4m6!3m5!1s0x33b563eb61d65407:0xeb029b393a73ae04!8m2!3d9.7474639!4d118.743392!16s%2Fg%2F11qh58crq0?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D',
-                        'facebook' => 'https://web.facebook.com/TwoWheelsZone',
-                        'hours' => 'Mon-Sat: 7:00AM-9:00PM',
-                        'services' => 'Motorcycle maintenance, customization',
-                        'order' => 2,
-                    ],
-                    [
-                        'name' => 'Elnido Branch',
-                        'address' => 'Sitio Nasigdan Brgy. Villa Libertad Elnido, PUERTO PRINCESA, 5300 Palawan',
-                        'maps' => 'https://www.google.com/maps/place/Two+Wheels+Zone+Elnido+Branch/@11.1849735,119.4026727,17z/data=!3m1!4b1!4m6!3m5!1s0x33b655b59689923b:0xbd05adb45cb27eb5!8m2!3d11.1849682!4d119.4052476!16s%2Fg%2F11trrczjpl?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D',
-                        'facebook' => 'https://web.facebook.com/TwoWheelsZone',
-                        'hours' => 'Mon-Sat: 7:00AM-9:00PM',
-                        'services' => 'Emergency repairs, tire services',
-                        'order' => 3,
-                    ],
-                    [
-                        'name' => 'Roxas Branch',
-                        'address' => 'Roxas, Palawan',
-                        'maps' => '#',
-                        'facebook' => 'https://web.facebook.com/TwoWheelsZone',
-                        'hours' => 'Mon-Sat: 7:00AM-9:00PM',
-                        'services' => 'Motorcycle repair, parts, accessories',
-                        'order' => 4,
-                    ],
-                    [
-                        'name' => 'Taytay Branch',
-                        'address' => 'Taytay, Palawan',
-                        'maps' => '#',
-                        'facebook' => 'https://web.facebook.com/TwoWheelsZone',
-                        'hours' => 'Mon-Sat: 7:00AM-9:00PM',
-                        'services' => 'Motorcycle repair, parts, accessories',
-                        'order' => 5,
-                    ],
-                ];
-                ?>
                 <div class="panel p-3">
                     <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
                         <div class="d-flex align-items-center gap-2">
@@ -163,7 +253,6 @@ session_start();
                                 <div class="col-sm-6 col-lg-4">
                                     <div class="item h-100 d-flex flex-column">
                                         <div class="fw-semibold mb-1"><?php echo htmlspecialchars($branch['name']); ?></div>
-                                        <div class="muted small mb-2">Order: <?php echo (int) $branch['order']; ?></div>
                                         <div class="small mb-2"><?php echo htmlspecialchars($branch['address']); ?></div>
                                         <?php if (!empty($branch['maps'])): ?>
                                             <div class="small mb-1">
@@ -184,8 +273,8 @@ session_start();
                                             <div class="small muted mb-2"><?php echo htmlspecialchars($branch['services']); ?></div>
                                         <?php endif; ?>
                                         <div class="mt-auto d-flex gap-2">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm w-100">Edit</button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm w-100">Delete</button>
+                                            <button type="button" class="btn btn-edit-branch btn-sm w-100" onclick="editBranch(<?php echo $branch['id']; ?>, '<?php echo addslashes($branch['name']); ?>', '<?php echo addslashes($branch['address']); ?>', '<?php echo addslashes($branch['maps']); ?>', '<?php echo addslashes($branch['facebook']); ?>', '<?php echo addslashes($branch['hours']); ?>', '<?php echo addslashes($branch['services']); ?>')">Edit</button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm w-100 btn-delete-branch" data-id="<?php echo $branch['id']; ?>" data-name="<?php echo htmlspecialchars($branch['name']); ?>" data-bs-toggle="modal" data-bs-target="#deleteBranchModal">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +285,135 @@ session_start();
             </main>
         </div>
     </div>
+    <!-- Edit Branch Modal -->
+    <div class="modal fade" id="editBranchModal" tabindex="-1" aria-labelledby="editBranchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editBranchModalLabel">Edit Branch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="../../backend/update/updateBranch.php" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="hidden" id="editBranchId" name="id">
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label class="form-label" for="editBranchName">Branch Name</label>
+                                <input type="text" class="form-control" id="editBranchName" name="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="editBranchHours">Hours</label>
+                                <input type="text" class="form-control" id="editBranchHours" name="hours">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="editBranchAddress">Address</label>
+                                <input type="text" class="form-control" id="editBranchAddress" name="address" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="editBranchMaps">Google Maps Link</label>
+                                <input type="url" class="form-control" id="editBranchMaps" name="maps">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="editBranchFacebook">Facebook Link</label>
+                                <input type="url" class="form-control" id="editBranchFacebook" name="facebook">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="editBranchServices">Services</label>
+                                <textarea class="form-control" id="editBranchServices" name="services" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-edit-branch">Update Branch</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Branch Modal -->
+    <div class="modal fade" id="deleteBranchModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border: none; overflow: hidden;">
+                <div class="modal-header bg-gradient-danger text-white">
+                    <h5 class="modal-title mb-0">Delete Branch</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Are you sure you want to delete this branch?</p>
+                    <small class="text-muted" id="deleteBranchName"></small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form method="POST" action="../../backend/delete/deleteBranch.php" id="deleteBranchForm" class="m-0">
+                        <input type="hidden" name="id" id="deleteBranchId" value="">
+                        <button type="submit" class="btn btn-modal-delete">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        <?php if ($modal): ?>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Create and show alert
+                const alertHtml = `
+                    <div class="alert alert-${modal['type']} alert-dismissible fade show position-fixed" style="top: 10px; left: 50%; transform: translateX(-50%); z-index: 1050; min-width: 300px;" role="alert">
+                        <strong><?php echo htmlspecialchars($modal['title']); ?>:</strong> <?php echo htmlspecialchars($modal['body']); ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                `;
+                document.body.insertAdjacentHTML('beforeend', alertHtml);
+
+                // Auto-hide after 3 seconds
+                setTimeout(function() {
+                    const alert = document.querySelector('.alert');
+                    if (alert) {
+                        const bsAlert = new bootstrap.Alert(alert);
+                        bsAlert.close();
+                    }
+                }, 3000);
+            });
+        <?php endif; ?>
+
+        function editBranch(id, name, address, maps, facebook, hours, services) {
+            document.getElementById('editBranchId').value = id;
+            document.getElementById('editBranchName').value = name;
+            document.getElementById('editBranchAddress').value = address;
+            document.getElementById('editBranchMaps').value = maps;
+            document.getElementById('editBranchFacebook').value = facebook;
+            document.getElementById('editBranchHours').value = hours;
+            document.getElementById('editBranchServices').value = services;
+
+            const modal = new bootstrap.Modal(document.getElementById('editBranchModal'));
+            modal.show();
+        }
+
+        // Handle delete button clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.btn-delete-branch');
+            const deleteIdInput = document.getElementById('deleteBranchId');
+            const deleteName = document.getElementById('deleteBranchName');
+
+            if (deleteButtons.length && deleteIdInput && deleteName) {
+                deleteButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        const name = btn.dataset.name;
+                        console.log('Delete button clicked:', { id, name });
+                        deleteIdInput.value = id || '';
+                        if (deleteName) {
+                            deleteName.textContent = name ? `"${name}"` : '';
+                        }
+                        console.log('Form input value:', deleteIdInput.value);
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
