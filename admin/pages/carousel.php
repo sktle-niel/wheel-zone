@@ -28,9 +28,9 @@ if ($status === 'success') {
 
 $carouselItems = [];
 
-$sql = 'SELECT id, title, image_path, display_order
+$sql = 'SELECT id, title, image_path
         FROM carousel_items
-        ORDER BY display_order ASC, id DESC';
+        ORDER BY id DESC';
 
 $result = $conn->query($sql);
 
@@ -41,7 +41,6 @@ if ($result) {
             'title' => $row['title'],
             // Prepend ../../ so admin view resolves correctly
             'image' => '../../' . ltrim($row['image_path'], '/'),
-            'order' => (int) $row['display_order'],
         ];
     }
     $result->free();
@@ -181,7 +180,7 @@ $conn->close();
                             <span class="fs-4"><i class="bi bi-images"></i></span>
                             <h1 class="h5 mb-0 text-white">Carousel Manager</h1>
                         </div>
-                        <p class="mb-0">Upload, reorder, and manage homepage banners.</p>
+                        <p class="mb-0">Upload and manage homepage banners.</p>
                     </div>
                     <div class="d-flex align-items-center gap-2 flex-wrap">
                         <span class="stat-chip"><i class="bi bi-collection"></i><?php echo count($carouselItems); ?> banners</span>
@@ -204,16 +203,12 @@ $conn->close();
                                 <label class="form-label" for="carouselTitle">Banner Title</label>
                                 <input type="text" class="form-control form-control-lg" id="carouselTitle" name="title" placeholder="e.g. Workshop" required>
                             </div>
-                            <div class="col-12 col-lg-3">
-                                <label class="form-label" for="carouselOrder">Display Order</label>
-                                <input type="number" class="form-control form-control-lg" id="carouselOrder" name="display_order" min="1" value="1" required>
-                            </div>
-                            <div class="col-12 col-lg-9">
+                            <div class="col-12 col-lg-6">
                                 <label class="form-label" for="carouselImage">Select Banner Image</label>
                                 <input type="file" class="form-control form-control-lg" id="carouselImage" name="image" accept="image/*" required>
                                 <small class="muted d-block mt-2">Supported: JPEG, JPG, PNG. Max size: 5MB.</small>
                             </div>
-                            <div class="col-12 col-lg-3 d-grid mt-3 mt-lg-4">
+                            <div class="col-12 col-lg-6 d-grid mt-3 mt-lg-4">
                                 <button type="submit" class="btn btn-upload-banner btn-lg">
                                     <i class="bi bi-upload me-2"></i>Upload Banner
                                 </button>
@@ -242,7 +237,6 @@ $conn->close();
                                     <div class="item h-100 d-flex flex-column">
                                         <div class="ratio ratio-16x9 mb-2 thumb-wrap" style="background:#f8fafc;">
                                             <img src="<?php echo htmlspecialchars($item['image']); ?>" alt="<?php echo htmlspecialchars($item['title']); ?>" class="w-100 h-100" style="object-fit: cover;">
-                                            <span class="order-badge">Order #<?php echo (int) $item['order']; ?></span>
                                         </div>
                                         <div class="flex-grow-1">
                                             <div class="fw-semibold mb-1"><?php echo htmlspecialchars($item['title'] ?: 'Untitled'); ?></div>

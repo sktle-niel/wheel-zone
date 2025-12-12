@@ -1,7 +1,6 @@
-- [x] Update body background to #f8fafc
-- [x] Update panel styles with shadows and border-radius
-- [x] Add hero section with gradient background
-- [x] Update button styles with gradients (btn-upload-product)
-- [x] Update card grid with hover effects
-- [x] Update muted colors and other styles to match carousel.php
-- [x] Add delete functionality to branches page (modal, JavaScript, backend integration)
+- [ ] Edit admin/pages/carousel.php: Update SQL query to remove display_order, change ORDER BY to id DESC
+- [ ] Edit admin/pages/carousel.php: Remove display_order input from the upload form
+- [ ] Edit admin/pages/carousel.php: Remove order badge from item display
+- [ ] Edit admin/pages/carousel.php: Update hero description to remove "reorder"
+- [ ] Edit backend/create/createCarousel.php: Remove display_order variable and validation
+- [ ] Edit backend/create/createCarousel.php: Update INSERT statement to exclude display_order
