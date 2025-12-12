@@ -5,7 +5,7 @@ body {
     font-weight: 400;
     font-style: normal;
     letter-spacing: 1px;
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
 }
 
 .parallax {
@@ -71,7 +71,7 @@ body {
 }
 
 .contact-form, .contact-info {
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;

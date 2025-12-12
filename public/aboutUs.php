@@ -15,13 +15,13 @@
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="margin-top: 0px; background-image: url('../assets/about/about.jpg');">
+    <section class="parallax" style=" background-image: url('../assets/about/about.jpg');">
         <div class="parallax-content">
             <h1>About Two Wheels Zone</h1>
         </div>
     </section>
 
-    <section class="about-content">
+    <section class="about-content" style="margin-top: -40px; border-radius: 0px; margin-bottom: -30px;">
         <div class="container">
             <div class="row">
                 <div class="col-12">

@@ -1,7 +1,7 @@
 /* Online Store Section Styles */
 
 .online-store {
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
     color: #2c3e50;
     position: relative;
 }

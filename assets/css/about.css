@@ -1,8 +1,41 @@
 /* About Section Styles */
 
 .about {
-    background: #FFFFFF;
-    color: #2c3e50;
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%);
+    color: #FFFFFF;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    margin: 3rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../../assets/about/about.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.about .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about h2, .about h3 {
+    color: #FFD23F !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.about p, .about .lead {
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: justify;
 }
 
 .about p, .about .lead {
@@ -10,19 +43,30 @@
 }
 
 .feature-item {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
-    border: 1px solid rgba(65, 206, 52, 0.3);
-    border-radius: 12px;
-    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    border: 2px solid #FFD23F;
+    border-radius: 15px;
+    padding: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(243, 22, 20, 0.4);
-    border-color: rgba(243, 22, 20, 0.6);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 210, 63, 0.5);
+    border-color: #FFD23F;
+    background: linear-gradient(135deg, #FFD23F 0%, #FFFFFF 100%);
+}
+
+.feature-item:hover h6 {
+    color: #1E3A8A !important;
+}
+
+.feature-item:hover .bi {
+    color: #1E3A8A !important;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }
 
 .feature-item:hover .bi {

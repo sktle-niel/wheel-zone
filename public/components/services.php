@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../assets/css/services.css">
-<section class="services py-5">
+<section class="services py-5" style="margin-top: -50px;">
     <div class="container">
-        <h2 class="text-center mb-4" style="color: #41CE34; text-transform: uppercase;">Our Services</h2>
+        <h2 class="text-center mb-4" style="color: #FFFF00; text-transform: uppercase;">Our Services</h2>
         <!-- Responsive Grid -->
         <div class="row">
             <div class="col-6 col-md-4 mb-4 service-card">
@@ -222,3 +222,4 @@
         });
     </script>
 </section>
+

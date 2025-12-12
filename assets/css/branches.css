@@ -54,7 +54,7 @@ body {
 
 .branches-content {
     padding: 4rem 0;
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
     color: #2c3e50;
 }
 
