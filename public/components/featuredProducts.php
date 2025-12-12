@@ -7,17 +7,19 @@ $sql = 'SELECT id, name, image_path
         FROM featured_products
         ORDER BY id DESC';
 
-$result = $conn->query($sql);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $featuredProducts[] = [
-            'id' => (int) $row['id'],
-            'name' => $row['name'],
-            'image_path' => $row['image_path'],
-        ];
+try {
+    $result = $conn->query($sql);
+    if ($result) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $featuredProducts[] = [
+                'id' => (int) $row['id'],
+                'name' => $row['name'],
+                'image_path' => $row['image_path'],
+            ];
+        }
     }
-    $result->free();
+} catch (PDOException $e) {
+    error_log('Query failed: ' . $e->getMessage());
 }
 
 
@@ -47,3 +49,7 @@ if ($result) {
     </div>
 </section>
 
+<style>
+    /* Minimal featured products grid */
+
+</style>

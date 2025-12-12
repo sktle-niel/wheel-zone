@@ -1,5 +1,5 @@
 .franchise-section {
-    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
+    background-color: #F7E332;
     color: #FFFFFF;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin: 2rem 0;
@@ -24,26 +24,24 @@
 }
 
 .franchise-section h2 {
-    color: #FFFFFF !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #000000 !important;
 }
 
 .franchise-section p {
-    color: #FFFFFF !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000 !important;
 }
 
 .franchise-section .btn {
-    background-color: #FFD23F !important;
-    color: #000 !important;
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
     border: 2px solid #FFFFFF !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .franchise-section .btn:hover {
-    background-color: #FFFFFF !important;
-    color: #FF6B35 !important;
+    background-color: #333333 !important;
+    color: #FFFFFF !important;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }

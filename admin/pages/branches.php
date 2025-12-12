@@ -152,26 +152,26 @@ if ($status === 'success') {
                         FROM branches
                         ORDER BY id DESC';
 
-                $result = $conn->query($sql);
-
-                if ($result) {
-                    while ($row = $result->fetch_assoc()) {
-                        $branches[] = [
-                            'id' => (int) $row['id'],
-                            'name' => $row['name'],
-                            'address' => $row['address'],
-                            'maps' => $row['maps'],
-                            'facebook' => $row['facebook'],
-                            'hours' => $row['hours'],
-                            'services' => $row['services'],
-                            'created_at' => $row['created_at'],
-                            'updated_at' => $row['updated_at'],
-                        ];
+                try {
+                    $result = $conn->query($sql);
+                    if ($result) {
+                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                            $branches[] = [
+                                'id' => (int) $row['id'],
+                                'name' => $row['name'],
+                                'address' => $row['address'],
+                                'maps' => $row['maps'],
+                                'facebook' => $row['facebook'],
+                                'hours' => $row['hours'],
+                                'services' => $row['services'],
+                                'created_at' => $row['created_at'],
+                                'updated_at' => $row['updated_at'],
+                            ];
+                        }
                     }
-                    $result->free();
+                } catch (PDOException $e) {
+                    error_log('Query failed: ' . $e->getMessage());
                 }
-
-                $conn->close();
                 ?>
                 <div class="hero mb-4 d-flex align-items-start justify-content-between gap-3 flex-wrap">
                     <div>

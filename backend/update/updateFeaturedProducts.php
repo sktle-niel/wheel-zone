@@ -16,23 +16,16 @@ if ($id < 1 || $name === '') {
     exit;
 }
 
-$stmt = $conn->prepare(
-    'UPDATE featured_products SET name = ? WHERE id = ?'
-);
-if (!$stmt) {
-    header('Location: ../../admin/pages/featuredProducts.php?status=db_prepare_error');
-    exit;
-}
+try {
+    $stmt = $conn->prepare(
+        'UPDATE featured_products SET name = ? WHERE id = ?'
+    );
 
-$stmt->bind_param('si', $name, $id);
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-if ($ok) {
+    $stmt->execute([$name, $id]);
     header('Location: ../../admin/pages/featuredProducts.php?status=update_success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/featuredProducts.php?status=update_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/featuredProducts.php?status=update_error');
-exit;

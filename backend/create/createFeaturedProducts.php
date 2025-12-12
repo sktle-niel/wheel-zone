@@ -51,24 +51,17 @@ if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
     exit;
 }
 
-$stmt = $conn->prepare(
-    'INSERT INTO featured_products (name, image_path)
-     VALUES (?, ?)'
-);
-if (!$stmt) {
-    header('Location: ../../admin/pages/featuredProducts.php?status=db_prepare_error');
-    exit;
-}
+try {
+    $stmt = $conn->prepare(
+        'INSERT INTO featured_products (name, image_path)
+         VALUES (?, ?)'
+    );
 
-$stmt->bind_param('ss', $name, $relativePath);
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-if ($ok) {
+    $stmt->execute([$name, $relativePath]);
     header('Location: ../../admin/pages/featuredProducts.php?status=success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/featuredProducts.php?status=db_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/featuredProducts.php?status=db_error');
-exit;

@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="../assets/css/services.css">
 <section class="services py-5" style="margin-top: -50px;">
     <div class="container">
-        <h2 class="text-center mb-4" style="color: #FFFF00; text-transform: uppercase;">Our Services</h2>
+        <h2 class="text-center mb-4" style="color: #FFD23F; text-transform: uppercase;">Our Services</h2>
         <!-- Responsive Grid -->
         <div class="row">
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-wrench fs-1 mb-2 text-success"></i>
+                        <i class="bi bi-wrench fs-1 mb-2" style="color: #FFD23F;"></i>
                         <h5 class="card-title" style="color: #2c3e50;">FI Cleaning</h5>
                     </div>
                 </div>
@@ -15,40 +15,40 @@
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-gear fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">FI Diagnosing Tools</h5>
+                        <i class="bi bi-gear fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">FI Diagnosing Tools</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-droplet fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">Injector Testing</h5>
+                        <i class="bi bi-droplet fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">Injector Testing</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-bullseye fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">Rim Alignment</h5>
+                        <i class="bi bi-bullseye fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">Rim Alignment</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-eye fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">Eye Line</h5>
+                        <i class="bi bi-eye fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">Eye Line</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-lightbulb fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">Headlight Upgrade and Setup</h5>
+                        <i class="bi bi-lightbulb fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">Headlight Upgrade and Setup</h5>
                     </div>
                 </div>
             </div>
@@ -66,16 +66,16 @@
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-volume-up fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">Loud Horn Upgrade</h5>
+                        <i class="bi bi-volume-up fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">Loud Horn Upgrade</h5>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-4 mb-4 service-card hidden">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="bi bi-tools fs-1 mb-2 text-success"></i>
-                        <h5 class="card-title">Vulcanizing</h5>
+                        <i class="bi bi-tools fs-1 mb-2" style="color: #FFD23F;"></i>
+                        <h5 class="card-title" style="color: #2c3e50;">Vulcanizing</h5>
                     </div>
                 </div>
             </div>
@@ -222,4 +222,5 @@
         });
     </script>
 </section>
+
 

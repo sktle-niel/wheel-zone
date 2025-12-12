@@ -1,27 +1,59 @@
 /* Online Store Section Styles */
 
 .online-store {
-    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
+    background: linear-gradient(135deg, #F7E332 0%, #FFD23F 50%, #FF6B6B 100%);
     color: #2c3e50;
     position: relative;
+    overflow: hidden;
+}
+
+.online-store::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .store-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    border: 2px solid rgba(65, 206, 52, 0.3);
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.store-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.store-card:hover::before {
+    left: 100%;
 }
 
 .store-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(65, 206, 52, 0.3);
-    border-color: #36b32a;
+    transform: translateY(-15px) scale(1.05) rotate(1deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.35);
 }
 
 .store-card .btn:hover {
-    background-color: #36b32a !important;
+    background-color: #FF8C00 !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

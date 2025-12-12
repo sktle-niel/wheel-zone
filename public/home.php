@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #FFFFFF;
+            background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
             min-height: 100vh;
             position: relative;
         }
@@ -56,7 +56,6 @@
     <?php include 'components/carousel.php'; ?>
     <?php include 'components/franchiseBtn.php'; ?>
     <?php include 'components/about.php'; ?>
-    <?php include 'components/services.php'; ?>
     <?php include 'components/featuredProducts.php'; ?>
     <?php include 'components/onlineStore.php'; ?>
     <?php include 'components/footer.php'; ?>

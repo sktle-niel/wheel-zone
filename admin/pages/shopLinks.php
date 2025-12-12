@@ -50,22 +50,22 @@ $sql = 'SELECT id, name, url, image_path
         FROM shop_links
         ORDER BY id DESC';
 
-$result = $conn->query($sql);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $shopLinks[] = [
-            'id' => (int) $row['id'],
-            'name' => $row['name'],
-            'url' => $row['url'],
-            // Prepend ../../ so admin view resolves correctly
-            'image' => '../../' . ltrim($row['image_path'], '/'),
-        ];
+try {
+    $result = $conn->query($sql);
+    if ($result) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $shopLinks[] = [
+                'id' => (int) $row['id'],
+                'name' => $row['name'],
+                'url' => $row['url'],
+                // Prepend ../../ so admin view resolves correctly
+                'image' => '../../' . ltrim($row['image_path'], '/'),
+            ];
+        }
     }
-    $result->free();
+} catch (PDOException $e) {
+    error_log('Query failed: ' . $e->getMessage());
 }
-
-$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

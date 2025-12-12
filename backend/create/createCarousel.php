@@ -51,25 +51,17 @@ if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
     exit;
 }
 
-$stmt = $conn->prepare(
-    'INSERT INTO carousel_items (title, image_path, created_at, updated_at)
-     VALUES (?, ?, NOW(), NOW())'
-);
+try {
+    $stmt = $conn->prepare(
+        'INSERT INTO carousel_items (title, image_path, created_at, updated_at)
+         VALUES (?, ?, NOW(), NOW())'
+    );
 
-if (!$stmt) {
-    header('Location: ../../admin/pages/carousel.php?status=db_prepare_error');
-    exit;
-}
-
-$stmt->bind_param('ss', $title, $relativePath);
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-if ($ok) {
+    $stmt->execute([$title, $relativePath]);
     header('Location: ../../admin/pages/carousel.php?status=success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/carousel.php?status=db_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/carousel.php?status=db_error');
-exit;

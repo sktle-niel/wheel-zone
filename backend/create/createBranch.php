@@ -20,24 +20,17 @@ if ($name === '' || $address === '') {
     exit;
 }
 
-$stmt = $conn->prepare(
-    'INSERT INTO branches (name, address, maps, facebook, hours, services)
-     VALUES (?, ?, ?, ?, ?, ?)'
-);
-if (!$stmt) {
-    header('Location: ../../admin/pages/branches.php?status=db_prepare_error');
-    exit;
-}
+try {
+    $stmt = $conn->prepare(
+        'INSERT INTO branches (name, address, maps, facebook, hours, services)
+         VALUES (?, ?, ?, ?, ?, ?)'
+    );
 
-$stmt->bind_param('ssssss', $name, $address, $maps, $facebook, $hours, $services);
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-if ($ok) {
+    $stmt->execute([$name, $address, $maps, $facebook, $hours, $services]);
     header('Location: ../../admin/pages/branches.php?status=success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/branches.php?status=db_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/branches.php?status=db_error');
-exit;

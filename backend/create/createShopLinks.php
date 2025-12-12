@@ -58,25 +58,18 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     exit;
 }
 
-$stmt = $conn->prepare(
-    'INSERT INTO shop_links (name, url, image_path)
-     VALUES (?, ?, ?)'
-);
-if (!$stmt) {
-    header('Location: ../../admin/pages/shopLinks.php?status=db_prepare_error');
-    exit;
-}
+try {
+    $stmt = $conn->prepare(
+        'INSERT INTO shop_links (name, url, image_path)
+         VALUES (?, ?, ?)'
+    );
 
-$stmt->bind_param('sss', $name, $url, $imagePath);
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-if ($ok) {
+    $stmt->execute([$name, $url, $imagePath]);
     header('Location: ../../admin/pages/shopLinks.php?status=success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/shopLinks.php?status=db_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/shopLinks.php?status=db_error');
-exit;
 ?>

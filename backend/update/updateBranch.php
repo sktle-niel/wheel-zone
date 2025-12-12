@@ -21,24 +21,16 @@ if ($id <= 0 || $name === '' || $address === '') {
     exit;
 }
 
-$stmt = $conn->prepare(
-    'UPDATE branches SET name = ?, address = ?, maps = ?, facebook = ?, hours = ?, services = ?, updated_at = NOW() WHERE id = ?'
-);
-if (!$stmt) {
-    header('Location: ../../admin/pages/branches.php?status=db_prepare_error');
-    exit;
-}
+try {
+    $stmt = $conn->prepare(
+        'UPDATE branches SET name = ?, address = ?, maps = ?, facebook = ?, hours = ?, services = ?, updated_at = NOW() WHERE id = ?'
+    );
 
-$stmt->bind_param('ssssssi', $name, $address, $maps, $facebook, $hours, $services, $id);
-
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-if ($ok) {
+    $stmt->execute([$name, $address, $maps, $facebook, $hours, $services, $id]);
     header('Location: ../../admin/pages/branches.php?status=update_success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/branches.php?status=update_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/branches.php?status=update_error');
-exit;
