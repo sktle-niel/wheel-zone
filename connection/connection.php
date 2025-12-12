@@ -1,17 +1,16 @@
 <?php
 // Database connection helper. Update credentials to match your setup.
-$dbHost = getenv('DB_HOST') ?: 'localhost';
+$db_server = getenv('DB_HOST') ?: 'localhost';
 $dbUser = getenv('DB_USER') ?: 'root';
 $dbPass = getenv('DB_PASS') ?: '';
 $dbName = getenv('DB_NAME') ?: 'database_twz';
 
-$conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
-
-if ($conn->connect_error) {
+try {
+    $conn = new PDO("mysql:host=$db_server;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
     http_response_code(500);
-    die('Database connection failed: ' . $conn->connect_error);
+    die('Database connection failed: ' . $e->getMessage());
 }
-
-// Ensure utf8mb4 for emoji/special chars.
-$conn->set_charset('utf8mb4');
 

@@ -2,20 +2,20 @@
 require_once '../connection/connection.php';
 
 $sql = "SELECT `id`, `name`, `address`, `maps`, `facebook`, `hours`, `services`, `created_at`, `updated_at` FROM `branches` WHERE 1";
-$result = $conn->query($sql);
 
 $branches = [];
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $branches[] = $row;
+try {
+    $result = $conn->query($sql);
+    if ($result) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $branches[] = $row;
+        }
     }
-    $result->free();
-} else {
+} catch (PDOException $e) {
     // Handle query failure, set empty array
     $branches = [];
+    error_log('Query failed: ' . $e->getMessage());
 }
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ $conn->close();
 
 
 <body>
-    <?php include 'components/navigationBar.php'; ?>
+    <?php include __DIR__ . '/components/navigationBar.php'; ?>
 
     <section class="parallax" style="background-image: url('../assets/carousel/w1.jpg');">
         <div class="parallax-content">
@@ -95,7 +95,7 @@ $conn->close();
         </div>
     </section>
 
-    <?php include 'components/footer.php'; ?>
+    <?php include __DIR__ . '/components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

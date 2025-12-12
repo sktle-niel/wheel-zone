@@ -21,7 +21,7 @@
 }
 
 .store-card .btn:hover {
-    background-color: #36b32a !important;
+    background-color: #F7931E !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

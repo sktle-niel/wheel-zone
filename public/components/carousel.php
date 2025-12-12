@@ -7,17 +7,19 @@ $sql = 'SELECT id, title, image_path
         FROM carousel_items
         ORDER BY id DESC';
 
-$result = $conn->query($sql);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $carouselItems[] = [
-            'id' => (int) $row['id'],
-            'title' => $row['title'],
-            'image_path' => $row['image_path'],
-        ];
+try {
+    $result = $conn->query($sql);
+    if ($result) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $carouselItems[] = [
+                'id' => (int) $row['id'],
+                'title' => $row['title'],
+                'image_path' => $row['image_path'],
+            ];
+        }
     }
-    $result->free();
+} catch (PDOException $e) {
+    error_log('Query failed: ' . $e->getMessage());
 }
 
 

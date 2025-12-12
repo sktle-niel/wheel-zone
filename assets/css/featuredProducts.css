@@ -1,6 +1,5 @@
-/* Minimal featured products grid */
 .featured-products {
-    background: #f8fbff;
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
     position: relative;
     overflow: hidden;
 }
@@ -12,7 +11,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../assets/about/shop.jpg') center/cover no-repeat;
     background-attachment: fixed;
     opacity: 0.05;
     z-index: 0;

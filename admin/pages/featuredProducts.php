@@ -50,21 +50,21 @@ $sql = 'SELECT id, name, image_path
         FROM featured_products
         ORDER BY id DESC';
 
-$result = $conn->query($sql);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $featuredProducts[] = [
-            'id' => (int) $row['id'],
-            'name' => $row['name'],
-            // Prepend ../../ so admin view resolves correctly
-            'image' => '../../' . ltrim($row['image_path'], '/'),
-        ];
+try {
+    $result = $conn->query($sql);
+    if ($result) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $featuredProducts[] = [
+                'id' => (int) $row['id'],
+                'name' => $row['name'],
+                // Prepend ../../ so admin view resolves correctly
+                'image' => '../../' . ltrim($row['image_path'], '/'),
+            ];
+        }
     }
-    $result->free();
+} catch (PDOException $e) {
+    error_log('Query failed: ' . $e->getMessage());
 }
-
-$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -17,41 +17,25 @@ if ($id <= 0 || $name === '' || $url === '') {
 }
 
 // Check if shop link exists
-$stmt = $conn->prepare('SELECT id FROM shop_links WHERE id = ?');
-if (!$stmt) {
-    header('Location: ../../admin/pages/shopLinks.php?status=update_error');
-    exit;
-}
-$stmt->bind_param('i', $id);
-$stmt->execute();
-$hasRow = $stmt->fetch();
-$stmt->close();
+try {
+    $stmt = $conn->prepare('SELECT id FROM shop_links WHERE id = ?');
+    $stmt->execute([$id]);
+    $hasRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$hasRow) {
-    header('Location: ../../admin/pages/shopLinks.php?status=update_error');
-    exit;
-}
+    if (!$hasRow) {
+        header('Location: ../../admin/pages/shopLinks.php?status=update_error');
+        exit;
+    }
 
-// Update DB row
-$updateStmt = $conn->prepare('UPDATE shop_links SET name = ?, url = ? WHERE id = ?');
-if (!$updateStmt) {
-    error_log('Update prepare failed: ' . $conn->error);
-    header('Location: ../../admin/pages/shopLinks.php?status=update_error');
-    exit;
-}
-$updateStmt->bind_param('ssi', $name, $url, $id);
-$ok = $updateStmt->execute();
-if (!$ok) {
-    error_log('Update execute failed: ' . $updateStmt->error);
-}
-$updateStmt->close();
-$conn->close();
+    // Update DB row
+    $updateStmt = $conn->prepare('UPDATE shop_links SET name = ?, url = ? WHERE id = ?');
+    $updateStmt->execute([$name, $url, $id]);
 
-if ($ok) {
     header('Location: ../../admin/pages/shopLinks.php?status=update_success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/shopLinks.php?status=update_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/shopLinks.php?status=update_error');
-exit;
 ?>

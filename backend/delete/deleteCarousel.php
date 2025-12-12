@@ -14,34 +14,20 @@ if ($id <= 0) {
 }
 
 // Fetch image path first to delete the file.
-$stmt = $conn->prepare('SELECT image_path FROM carousel_items WHERE id = ?');
-if (!$stmt) {
-    header('Location: ../../admin/pages/carousel.php?status=delete_db_error');
-    exit;
-}
-$stmt->bind_param('i', $id);
-$stmt->execute();
-$stmt->bind_result($imagePath);
-$hasRow = $stmt->fetch();
-$stmt->close();
+try {
+    $stmt = $conn->prepare('SELECT image_path FROM carousel_items WHERE id = ?');
+    $stmt->execute([$id]);
+    $imagePath = $stmt->fetchColumn();
 
-if (!$hasRow) {
-    header('Location: ../../admin/pages/carousel.php?status=delete_not_found');
-    exit;
-}
+    if ($imagePath === false) {
+        header('Location: ../../admin/pages/carousel.php?status=delete_not_found');
+        exit;
+    }
 
-// Delete DB row
-$delStmt = $conn->prepare('DELETE FROM carousel_items WHERE id = ?');
-if (!$delStmt) {
-    header('Location: ../../admin/pages/carousel.php?status=delete_db_error');
-    exit;
-}
-$delStmt->bind_param('i', $id);
-$ok = $delStmt->execute();
-$delStmt->close();
-$conn->close();
+    // Delete DB row
+    $delStmt = $conn->prepare('DELETE FROM carousel_items WHERE id = ?');
+    $delStmt->execute([$id]);
 
-if ($ok) {
     // Remove file if present
     if (!empty($imagePath)) {
         $fullPath = realpath(__DIR__ . '/../../' . ltrim($imagePath, '/'));
@@ -51,7 +37,8 @@ if ($ok) {
     }
     header('Location: ../../admin/pages/carousel.php?status=delete_success');
     exit;
+} catch (PDOException $e) {
+    error_log('Database error: ' . $e->getMessage());
+    header('Location: ../../admin/pages/carousel.php?status=delete_db_error');
+    exit;
 }
-
-header('Location: ../../admin/pages/carousel.php?status=delete_db_error');
-exit;

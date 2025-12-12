@@ -5,30 +5,31 @@ $shopLinks = [];
 
 $sql = 'SELECT id, name, url, image_path FROM shop_links ORDER BY id DESC';
 
-// Check if connection is still valid
-if ($conn && !$conn->connect_errno) {
+try {
     $result = $conn->query($sql);
-} else {
-    // Reconnect if connection is closed
-    require_once '../connection/connection.php';
-    $result = $conn->query($sql);
-}
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $shopLinks[] = [
-            'id' => (int) $row['id'],
-            'name' => $row['name'],
-            'url' => $row['url'],
-            // Prepend ../ so public view resolves correctly
-            'image' => '../' . ltrim($row['image_path'], '/'),
-        ];
+    if ($result) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $shopLinks[] = [
+                'id' => (int) $row['id'],
+                'name' => $row['name'],
+                'url' => $row['url'],
+                // Prepend ../ so public view resolves correctly
+                'image' => '../' . ltrim($row['image_path'], '/'),
+            ];
+        }
     }
-    $result->free();
+} catch (PDOException $e) {
+    // Handle error
+    error_log('Query failed: ' . $e->getMessage());
 }
 
 
 ?>
+
+
+<style>
+    
+</style>
 <link rel="stylesheet" href="../assets/css/onlineStore.css">
 <section class="online-store py-5">
     <div class="container">
@@ -47,7 +48,7 @@ if ($result) {
                         </div>
                         <h3 style="color: #41CE34; font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; font-size: 28px; margin-bottom: 15px;"><?php echo htmlspecialchars($link['name']); ?></h3>
                         <p style="font-size: 18px; margin-bottom: 25px; font-family: 'Bebas Neue', sans-serif; color: #34495e;">Shop our products on <?php echo htmlspecialchars($link['name']); ?></p>
-                        <a href="<?php echo htmlspecialchars($link['url']); ?>" class="btn btn-primary w-100" style="background-color: #41CE34; border: none; color: #000; font-weight: bold; text-transform: uppercase; padding: 12px 24px; transition: all 0.3s ease; font-family: 'Bebas Neue', sans-serif; font-size: 18px;" target="_blank">Visit <?php echo htmlspecialchars($link['name']); ?></a>
+                        <a href="<?php echo htmlspecialchars($link['url']); ?>" class="btn btn-primary w-100" style="background-color: #FFD23F; border: none; color: #000; font-weight: bold; text-transform: uppercase; padding: 12px 24px; transition: all 0.3s ease; font-family: 'Bebas Neue', sans-serif; font-size: 18px;" target="_blank">Visit <?php echo htmlspecialchars($link['name']); ?></a>
                     </div>
                 </div>
             <?php endforeach; ?>
