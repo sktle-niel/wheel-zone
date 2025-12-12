@@ -4,3 +4,9 @@
 - [ ] Edit admin/pages/carousel.php: Update hero description to remove "reorder"
 - [ ] Edit backend/create/createCarousel.php: Remove display_order variable and validation
 - [ ] Edit backend/create/createCarousel.php: Update INSERT statement to exclude display_order
+- [x] Include the database connection at the top of 'public/branches.php'.
+- [x] Execute the SQL query and fetch the results in 'public/branches.php'.
+- [x] Replace the hardcoded branch cards in 'public/branches.php' with a PHP loop that generates the cards dynamically.
+- [x] Structure the output in 'public/branches.php' to match the current layout: use <div class="row"> wrapping every two <div class="col-md-6"> for branches.
+- [x] Keep the map section at the end of 'public/branches.php' unchanged.
+- [x] Ensure proper error handling if the query fails in 'public/branches.php'.
