@@ -11,6 +11,8 @@ body {
 
 .nav-link {
     font-size: 24px !important;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 #navbar {
@@ -149,7 +151,6 @@ body {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/navigationBar.css">
 <nav id="navbar" class="navbar navbar-expand-md navbar-light sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="./home.php"><img src="../assets/branding/lucent.png" alt="Moto Brand Logo" height="90"></a>
@@ -257,5 +258,3 @@ body {
         }
     </script>
 </nav>
-
-

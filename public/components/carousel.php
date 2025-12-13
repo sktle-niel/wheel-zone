@@ -25,41 +25,31 @@ try {
 
 ?>
 
-<link rel="stylesheet" href="../assets/css/carousel.css">
 <?php if (!empty($carouselItems)): ?>
-<div class="parallax-container">
-    <div class="parallax-image" id="parallax-image">
-        <div class="carousel-overlay"></div>
-    </div>
-</div>
-
-<script>
-    const images = [
-        <?php foreach ($carouselItems as $item): ?>
-            '../<?php echo htmlspecialchars($item['image_path']); ?>',
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000" >
+    <div class="carousel-indicators">
+        <?php foreach ($carouselItems as $index => $item): ?>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $index; ?>" <?php echo $index === 0 ? 'class="active" aria-current="true"' : ''; ?> aria-label="Slide <?php echo $index + 1; ?>"></button>
         <?php endforeach; ?>
-    ];
-    let currentIndex = 0;
-    const parallaxImage = document.getElementById('parallax-image');
-
-    function changeImage() {
-        // Fade out
-        parallaxImage.style.opacity = '0';
-        setTimeout(() => {
-            // Change image after fade out
-            parallaxImage.style.backgroundImage = `url(${images[currentIndex]})`;
-            currentIndex = (currentIndex + 1) % images.length;
-            // Fade in
-            parallaxImage.style.opacity = '1';
-        }, 1000); // Match transition duration
-    }
-
-    // Initial load
-    changeImage();
-
-    // Change image every 6 seconds
-    setInterval(changeImage, 6000);
-</script>
+    </div>
+    <div class="carousel-inner">
+        <?php foreach ($carouselItems as $index => $item): ?>
+            <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                <div class="parallax-image" style="background-image: url('../<?php echo htmlspecialchars($item['image_path']); ?>'); height: 870px; margin-top: -100px;">
+                    <div class="carousel-overlay"></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 <style>/* Parallax Styles */
 
@@ -77,8 +67,69 @@ try {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    transition: opacity 0.4s ease-in-out; /* Fade transition */
-    opacity: 1;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Custom Carousel Colors and Sizes */
+.carousel-indicators {
+    bottom: 20px;
+    z-index: 10;
+}
+
+.carousel-indicators button {
+    background-color: #F7E332 !important;
+}
+
+.carousel-indicators .active {
+    background-color: #F7E332 !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 10;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem !important;
+    height: 2rem !important;
+}
+
+@media (max-width: 767px) {
+    .parallax-image {
+        height: 480px !important;
+        margin-top: 0 !important;
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}'
+
+/* Parallax Styles */
+
+.parallax-container {
+    height: 870px;
+    margin-top: -100px !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-image {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .carousel-overlay {
@@ -97,6 +148,8 @@ try {
         margin-top: 0 !important;
     }
 }
+
+
 
 </style>
 
