@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../assets/css/franchiseBtn.css">
 <section class="franchise-section py-5" style="margin-top: 0px;  ">
+    <div class="franchise-background"></div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">

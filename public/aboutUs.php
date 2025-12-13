@@ -18,6 +18,8 @@
             font-family: "Bookman Old Style", serif !important;
 
         }
+
+        
     </style>
 
     <?php include 'components/navigationBar.php'; ?>
@@ -32,19 +34,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center">Who We Are</h2>
+                    <h2 class="text-center" style="color: black;">Who We Are</h2>
                     <p>Two Wheels Zone is dedicated to providing top-quality motorcycle parts, expert maintenance, and comprehensive services for motorcycle enthusiasts. With years of experience in the industry, we pride ourselves on delivering reliable solutions that keep your two-wheeled adventures running smoothly.</p>
                     <p>Our team of skilled professionals is passionate about motorcycles and committed to ensuring every rider's safety and satisfaction. From routine maintenance to custom upgrades, we offer a wide range of services tailored to meet your specific needs.</p>
                 </div>
             </div>
             <div class="row mt-5" >
                 <div class="col-md-6">
-                    <h2>Our History</h2>
+                    <h2 style="color: black;">Our History</h2>
                     <p>Founded in 2021, Two Wheels Zone started as a small workshop with a vision to revolutionize motorcycle servicing in the Philippines. What began as a passion project by a group of motorcycle enthusiasts has grown into a trusted name in the industry.</p>
                     <p>Over the years, we've expanded our services, partnered with leading brands, and built a reputation for excellence. Our commitment to quality and customer satisfaction has driven our growth from a local shop to a comprehensive motorcycle service center.</p>
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-left">Our Advantages</h2>
+                    <h2 class="text-left" style="color: black;">Our Advantages</h2>
                     <ul class="list-unstyled text-left">
                         <li><i class="bi bi-check-circle-fill text-success me-2"></i>Expert technicians with years of experience</li>
                         <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genuine parts from trusted manufacturers</li>

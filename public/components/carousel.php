@@ -43,15 +43,22 @@ try {
     const parallaxImage = document.getElementById('parallax-image');
 
     function changeImage() {
-        parallaxImage.style.backgroundImage = `url(${images[currentIndex]})`;
-        currentIndex = (currentIndex + 1) % images.length;
+        // Fade out
+        parallaxImage.style.opacity = '0';
+        setTimeout(() => {
+            // Change image after fade out
+            parallaxImage.style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length;
+            // Fade in
+            parallaxImage.style.opacity = '1';
+        }, 1000); // Match transition duration
     }
 
     // Initial load
     changeImage();
 
-    // Change image every 4 seconds
-    setInterval(changeImage, 4000);
+    // Change image every 6 seconds
+    setInterval(changeImage, 6000);
 </script>
 
 <style>/* Parallax Styles */
@@ -70,7 +77,8 @@ try {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    transition: background-image 1s ease-in-out; /* Smooth transition */
+    transition: opacity 0.4s ease-in-out; /* Fade transition */
+    opacity: 1;
 }
 
 .carousel-overlay {

@@ -21,34 +21,6 @@
             min-height: 100vh;
             position: relative;
         }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(65, 206, 52, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(243, 22, 20, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(65, 206, 52, 0.02) 0%, transparent 50%);
-            background-size: 100% 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(65, 206, 52, 0.02) 35px, rgba(65, 206, 52, 0.02) 70px),
-                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(243, 22, 20, 0.015) 35px, rgba(243, 22, 20, 0.015) 70px);
-            pointer-events: none;
-            z-index: 0;
-        }
         body > * {
             position: relative;
             z-index: 1;
