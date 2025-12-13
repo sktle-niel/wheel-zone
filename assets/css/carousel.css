@@ -1,9 +1,19 @@
-/* Carousel Styles */
+/* Parallax Styles */
 
-#carouselExampleIndicators {
+.parallax-container {
     height: 870px;
     margin-top: -100px !important;
-    background-color: #FF8C69;
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-image {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .carousel-overlay {
@@ -16,18 +26,10 @@
     z-index: 1;
 }
 
-#carouselExampleIndicators .carousel-item img {
-    height: 890px;
-    object-fit: cover !important;
-}
-
 @media (max-width: 767px) {
-    #carouselExampleIndicators {
+    .parallax-container {
         height: 480px !important;
         margin-top: 0 !important;
-    }
-    #carouselExampleIndicators .carousel-item img {
-        height: 500px !important;
     }
 }
 

@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="../assets/css/aboutUs.css">
 </head>
 <body>
+    <style>
+        * {
+            font-family: "Bookman Old Style", serif !important;
+
+        }
+    </style>
+
     <?php include 'components/navigationBar.php'; ?>
 
     <section class="parallax" style=" background-image: url('../assets/about/about.jpg');">

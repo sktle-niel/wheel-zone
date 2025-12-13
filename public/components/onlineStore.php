@@ -59,6 +59,11 @@ try {
 <style>
 /* Online Store Section Styles */
 
+* {
+    font-family: "Bookman Old Style", serif;
+
+}
+
 .online-store {
     background: linear-gradient(135deg, #F7E332 0%, #FFD23F 50%, #FF6B6B 100%);
     color: #2c3e50;
@@ -150,7 +155,5 @@ try {
         padding: 10px 20px;
     }
 }
-
-
 
 </style>

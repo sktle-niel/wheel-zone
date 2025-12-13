@@ -14,6 +14,13 @@
 </head>
 
 
+<style>
+        * {
+            font-family: "Bookman Old Style", serif !important;
+
+        }
+    </style>
+
 <body>
     <?php include 'components/navigationBar.php'; ?>
 

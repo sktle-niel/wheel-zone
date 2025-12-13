@@ -27,27 +27,69 @@ try {
 
 <link rel="stylesheet" href="../assets/css/carousel.css">
 <?php if (!empty($carouselItems)): ?>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" id="carousel">
-    <div class="carousel-indicators">
-        <?php foreach ($carouselItems as $index => $item): ?>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $index; ?>" <?php echo $index === 0 ? 'class="active" aria-current="true"' : ''; ?> aria-label="Slide <?php echo $index + 1; ?>"></button>
-        <?php endforeach; ?>
+<div class="parallax-container">
+    <div class="parallax-image" id="parallax-image">
+        <div class="carousel-overlay"></div>
     </div>
-    <div class="carousel-inner">
-        <?php foreach ($carouselItems as $index => $item): ?>
-            <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                <img src="../<?php echo htmlspecialchars($item['image_path']); ?>" class="d-block w-100" alt="<?php echo htmlspecialchars($item['title']); ?>">
-                <div class="carousel-overlay"></div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
+
+<script>
+    const images = [
+        <?php foreach ($carouselItems as $item): ?>
+            '../<?php echo htmlspecialchars($item['image_path']); ?>',
+        <?php endforeach; ?>
+    ];
+    let currentIndex = 0;
+    const parallaxImage = document.getElementById('parallax-image');
+
+    function changeImage() {
+        parallaxImage.style.backgroundImage = `url(${images[currentIndex]})`;
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    // Initial load
+    changeImage();
+
+    // Change image every 4 seconds
+    setInterval(changeImage, 4000);
+</script>
+
+<style>/* Parallax Styles */
+
+.parallax-container {
+    height: 870px;
+    margin-top: -100px !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-image {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: background-image 1s ease-in-out; /* Smooth transition */
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .parallax-container {
+        height: 480px !important;
+        margin-top: 0 !important;
+    }
+}
+
+</style>
+
 <?php endif; ?>

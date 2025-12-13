@@ -33,6 +33,12 @@ try {
     <link rel="stylesheet" href="../assets/css/branches.css">
 </head>
 
+<style>
+        * {
+            font-family: "Bookman Old Style", serif !important;
+
+        }
+    </style>
 
 <body>
     <?php include __DIR__ . '/components/navigationBar.php'; ?>
