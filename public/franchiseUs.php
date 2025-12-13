@@ -17,10 +17,9 @@
 <style>
         * {
             font-family: "Bookman Old Style", serif !important;
-
         }
-    </style>
 
+        
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
@@ -32,8 +31,21 @@
 
     <section class="franchise-form">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-6 border-lg-end">
+                    <h2>About Franchising</h2>
+                    <p>Join the Two Wheels Zone family and become a franchise owner. Expand your business opportunities in the motorcycle industry with our proven model, comprehensive support, and expert guidance. Whether you're passionate about motorcycles or looking for a lucrative investment, franchising with us offers the perfect blend of excitement and profitability.</p>
+                    <p>Our franchise program provides:</p>
+                    <ul>
+                        <li>Comprehensive training and support</li>
+                        <li>Proven business model</li>
+                        <li>Marketing and branding assistance</li>
+                        <li>Ongoing operational guidance</li>
+                    </ul>
+                    <p>Contact us today to learn more about becoming a Two Wheels Zone franchise owner!</p>
+                </div>
+                <hr class="d-lg-none">
+                <div class="col-lg-6">
                     <h2>Franchise Inquiry</h2>
                     <?php
                     if (isset($_GET['status']) && $_GET['status'] == 'success') {
@@ -75,7 +87,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-submit">Submit Inquiry</button>

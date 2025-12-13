@@ -15,7 +15,7 @@ try {
                 'url' => $row['url'],
                 // Prepend ../ so public view resolves correctly
                 'image' => '../' . ltrim($row['image_path'], '/'),
-            ];
+            ]; 
         }
     }
 } catch (PDOException $e) {
@@ -30,7 +30,6 @@ try {
 <style>
 
 </style>
-<link rel="stylesheet" href="../assets/css/onlineStore.css">
 <section class="online-store py-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -65,7 +64,7 @@ try {
 }
 
 .online-store {
-    background: linear-gradient(135deg, #F7E332 0%, #FFD23F 50%, #FF6B6B 100%);
+    background-color: #F7E332;
     color: #2c3e50;
     position: relative;
     overflow: hidden;

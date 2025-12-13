@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/contactUs.css">
 </head>
 
 
@@ -19,12 +18,246 @@
             font-family: "Bookman Old Style", serif !important;
 
         }
+
+        /* Contact Us Page Styles */
+
+body {
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
+}
+
+.parallax {
+    height: 50vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+    z-index: 1;
+}
+
+.parallax-content h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 5px solid #41CE34;
+}
+
+.parallax-content p {
+    font-size: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.contact-content {
+    padding: 4rem 0;
+    color: #2c3e50;
+}
+
+.contact-content h2 {
+    color: #41CE34;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.contact-content p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 24px;
+    color: #34495e;
+}
+
+.contact-form, .contact-info {
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(65, 206, 52, 0.2);
+    background: transparent;
+}
+
+.contact-form {
+    font-size: 21px;
+}
+
+.contact-form h3, .contact-info h3 {
+    color: #41CE34;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    color: #2c3e50;
+    text-align: left;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #41CE34;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #2c3e50;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #41CE34;
+    box-shadow: 0 0 0 0.2rem rgba(65, 206, 52, 0.25);
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: rgba(44, 62, 80, 0.6);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background: #41CE34;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 24px;
+    letter-spacing: 2px !important;
+}
+
+.btn-submit:hover {
+    background: #2E8B57;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+
+.contact-info a {
+    color: #41CE34;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #36b32a;
+    text-decoration: underline;
+}
+
+.contact-info i {
+    color: #41CE34;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .parallax {
+        height: 70vh;
+    }
+    .parallax-content {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .parallax-content h1 {
+        margin-top: 50px;
+        font-size: 2rem;
+    }
+    .parallax-content p {
+        font-size: 1rem;
+    }
+    .contact-content {
+        padding: 2rem 0;
+    }
+    .contact-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .contact-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    .row.mt-5 .col-md-6 {
+        margin-bottom: 2rem;
+    }
+    .row.mt-5 .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+    .form-group label {
+        display: block;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .parallax-content h1 {
+        margin-top: 30px;
+        font-size: 1.5rem;
+        width: 250px;
+    }
+    .parallax-content p {
+        font-size: 0.9rem;
+        max-width: none;
+    }
+    .contact-content {
+        padding: 1rem 0;
+    }
+    .contact-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .contact-content p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    .contact-form, .contact-info {
+        padding: 1rem;
+    }
+    .form-group input, .form-group textarea {
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+    .btn-submit {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    .form-group label {
+        display: block;
+        text-align: left !important;
+    }
+}
+
+
     </style>
 
 <body>
     <?php include 'components/navigationBar.php'; ?>
 
-    <section class="parallax" style="background-image: url('../assets/carousel/w1.jpg');">
+    <section class="parallax" style="background-image: url('../assets/carousel/w1.jpg');" style="background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%) !important;
+">
         <div class="parallax-content">
             <h1>Contact Us</h1>
             <p>Get in touch with us for all your motorcycle needs. We're here to help you ride better.</p>
@@ -35,7 +268,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center">Reach Out to Us</h2>
+                    <h2 class="text-center" style="color: black;">Reach Out to Us</h2>
                     <p class="text-center">Have questions about our services, need assistance with your motorcycle, or interested in franchising? We're just a call or message away. Our team is ready to provide you with expert advice and top-notch service.</p>
                     <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
                         <div id="success-alert" class="alert alert-success text-center" role="alert">
@@ -47,7 +280,7 @@
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="contact-form">
-                        <h3>Send us a Message</h3>
+                        <h3 style="color: black;">Send us a Message</h3>
                         <form action="../sendMessage.php" method="post">
                             <div class="form-group">
                                 <label for="name" class="text-start">Name</label>
@@ -71,10 +304,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p><i class="bi bi-telephone"></i> <strong>09166842718</p>
-                        <p><i class="bi bi-facebook"></i> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank">Follow us on Facebook</a></p>
-                        <p><i class="bi bi-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
+                        <h3 style="color: black;">Get in Touch</h3>
+                        <p><i class="bi bi-telephone" style="color: black;"></i> <strong>09166842718</p>
+                        <p><i class="bi bi-facebook" style="color: black;"></i> <a href="https://web.facebook.com/TwoWheelsZone" target="_blank" style="color: black;">Follow us on Facebook</a></p>
+                        <p><i class="bi bi-clock" style="color: black;"></i> <strong>Business Hours:</strong> Mon-Sat: 7:00AM-9:00PM</p>
                     </div>
                 </div>
             </div>
