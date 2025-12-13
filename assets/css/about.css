@@ -7,6 +7,7 @@
     margin: 3rem 0;
     overflow: hidden;
     position: relative;
+    font-family: "Bookman Old Style", serif;
 }
 
 .about .container {
@@ -16,11 +17,13 @@
 
 .about h2, .about h3 {
     color: #1E3A8A !important;
+    font-family: "Bookman Old Style", serif;
 }
 
 .about p, .about .lead {
     color: #2c3e50 !important;
     text-align: justify;
+    font-family: "Bookman Old Style", serif;
 }
 
 .about p, .about .lead {

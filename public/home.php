@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
+        * {
+            font-family: "Bookman Old Style", serif !important;
+
+        }
+
         body {
             background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
             min-height: 100vh;

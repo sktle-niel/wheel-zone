@@ -60,3 +60,139 @@
 
 </section>
 
+<style>
+    /* About Section Styles */
+
+.about {
+    background: linear-gradient(135deg, #FFF0F0 0%, #F0FFF0 100%);
+    color: #FFFFFF;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    margin: 3rem 0;
+    overflow: hidden;
+    position: relative;
+    font-family: "Bookman Old Style", serif;
+}
+
+.about .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about h2, .about h3 {
+    color: #1E3A8A !important;
+    font-family: "Bookman Old Style", serif;
+}
+
+.about p, .about .lead {
+    color: #2c3e50 !important;
+    text-align: justify;
+    font-family: "Bookman Old Style", serif;
+}
+
+.about p, .about .lead {
+    text-align: justify;
+}
+
+.feature-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    border: 2px solid #FFD23F;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 210, 63, 0.5);
+    border-color: #FFD23F;
+    background: linear-gradient(135deg, #FFD23F 0%, #FFFFFF 100%);
+}
+
+.feature-item:hover h6 {
+    color: #1E3A8A !important;
+}
+
+.feature-item:hover .bi {
+    color: #1E3A8A !important;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .bi {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.workshop-image {
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.workshop-image:hover {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(1.1) contrast(1.05);
+    box-shadow: 0 15px 35px rgba(243, 22, 20, 0.3);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.carousel-image.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-image:hover {
+    opacity: 1 !important;
+    pointer-events: auto;
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(1.1) contrast(1.05);
+    box-shadow: 0 15px 35px rgba(244, 222, 43, 0.3);
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .feature-item {
+        margin-bottom: 20px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    .lead, p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    h6 {
+        font-size: 0.85rem;
+    }
+}
+
+
+</style>
+
